@@ -6,21 +6,22 @@
 		<module>Order</module>
 		<module>stock</module>
 	</modules>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.11</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+	<!--parent 标签写法替换成为了dependencyManagement 标签写法-->
+	<!--springboot的版本管理器 以后公司中开发就可以使用parent去继承公司自定义的父maven项目-->
 	<groupId>com.study.springcloud</groupId>
 	<artifactId>springcloudalibaba</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springcloudalibaba</name>
 	<description>Spring Cloud Alibaba</description>
 	<packaging>pom</packaging>
+
 	<properties>
 		<java.version>1.8</java.version>
+		<spring.cloud.alibaba.version>2.2.9.RELEASE</spring.cloud.alibaba.version>
+		<spring.boot.version>2.3.2.RELEASE</spring.boot.version>
+		<spring.cloud.version>Hoxton.SR12</spring.cloud.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -32,13 +33,57 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!--MySQL jdbc 驱动-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- jdbc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- spring cloud alibaba 包版本管理 -->
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring.cloud.alibaba.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- spring boot 包版本管理 -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- spring cloud 包版本管理 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring.cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+<!--				<version>2.1.7.RELEASE</version>-->
 			</plugin>
 		</plugins>
 	</build>
