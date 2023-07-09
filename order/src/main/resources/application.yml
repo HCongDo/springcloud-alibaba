@@ -1,5 +1,9 @@
 server:
   port: 8080
+# springboot默认的日志级别是info ,feign的dubug日志级别就不会输入
+logging:
+  level:
+    com.study.feign: debug
 spring:
   application:
     name: order-service
@@ -15,5 +19,30 @@ spring:
         username: nacos
         password: nacos
         namespace: public
+#配置单个服务负载均衡策略
+#全局配置采用RibbonConfig配置类的方式
+stock-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+ribbon:
+  eager-load:
+    # 开启ribbon饥饿加载
+    enabled: true
+    # 配置mall-user使用ribbon饥饿加载，多个使用逗号分隔
+    clients: stock-service
+# feign局部配置
+feign:
+  client:
+    config:
+      product-service:
+        loggerLevel: BASIC #设置日志级别 ，默认为info，不输出日志
+#        contract: feign.Contract.Default #设置为默认的契约  （还原成原生注解）
+        # 连接超时时间，默认2s
+        connectTimeout: 5000
+        # 请求处理超时时间，默认5s
+        readTimeout: 10000
+        requestInterceptors[0]:
+          com.study.feign.interceptor.CustomFeignInterceptor
+
 
 

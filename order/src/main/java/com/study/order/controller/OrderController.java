@@ -1,11 +1,11 @@
 package com.study.order.controller;
 
+import com.study.common.entity.User;
+import com.study.feign.ProductFeignService;
+import com.study.feign.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
-import javax.sql.DataSource;
 
 /**
  * @author hecong
@@ -17,14 +17,19 @@ import javax.sql.DataSource;
 public class OrderController {
 
     @Autowired
-    RestTemplate restTemplate;
+    StockFeignService stockFeignService;
+
+    @Autowired
+    ProductFeignService productFeignService;
 
 
     @RequestMapping("/add")
     public String add(){
         System.out.println("下单成功");
-        String result = restTemplate.getForObject("http://stock-service/stock/reduct", String.class);
-        System.out.println(result);
+        User reduct = stockFeignService.reduct();
+        System.out.println(reduct.toString());
+        String info = productFeignService.getInfo(1);
+        System.out.println(info);
         return "Hello World";
     }
 }

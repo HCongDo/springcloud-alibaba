@@ -1,12 +1,11 @@
 server:
-  port: 8081
-# springboot默认的日志级别是info ,feign的dubug日志级别就不会输入
+  port: 8082
 logging:
   level:
-    com.study.stock: DEBUG
+    com.tulingxueyuan.product: DEBUG
 spring:
   application:
-    name: stock-service
+    name: product-service
   datasource:
     username: hc
     password: Hc_123456
