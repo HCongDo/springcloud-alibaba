@@ -4,53 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d876b4c-c112-41c1-975e-387bd3f47dcc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_core_10_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_hystrix_10_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_feign_slf4j_10_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_form_feign_form_3_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_openfeign_form_feign_form_spring_3_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_3_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_openfeign_core_2_2_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_openfeign_2_2_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/src/main/java/com/study/config/FeignConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/src/main/java/com/study/feign/ProductFeignService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/src/main/java/com/study/feign/StockFeignService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/src/main/java/com/study/feign/interceptor/CustomFeignInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/product-nacos.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/product.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/ProductApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="8d876b4c-c112-41c1-975e-387bd3f47dcc" name="Default Changelist" comment="Ribbion 与 OpenFeign 相关代码提交">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_cloud_spring_cloud_starter_alibaba_nacos_config_2_2_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/order.iml" beforeDir="false" afterPath="$PROJECT_DIR$/order/order.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/OrderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/OrderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/target/classes/com/study/OrderApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/order/target/classes/com/study/OrderApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/target/classes/com/study/order/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/order/target/classes/com/study/order/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/target/classes/com/study/OrderApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/target/classes/com/study/order/controller/OrderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/target/test-classes/com/study/TestDatasource.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/product.iml" beforeDir="false" afterPath="$PROJECT_DIR$/product/product.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/resources/application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/springcloudalibaba.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springcloudalibaba.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stock/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stock/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock/src/main/java/com/study/stock/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock/src/main/java/com/study/stock/controller/StockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/stock/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stock/stock.iml" beforeDir="false" afterPath="$PROJECT_DIR$/stock/stock.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/stock/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock/target/classes/com/study/stock/controller/StockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/stock/target/classes/com/study/stock/controller/StockController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +79,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/stock/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -113,10 +87,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\stock\src\main\resources" />
+      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\product\src\main\resources" />
+      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\order\src\main\resources" />
+      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\order\target\classes" />
       <recent name="D:\work-soft\software-engineering\springcloud-alibaba" />
-      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\order\src" />
-      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\order\src\main" />
-      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\stock\src\main" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -220,8 +195,19 @@
       <workItem from="1688866740417" duration="477000" />
       <workItem from="1688867231160" duration="2589000" />
       <workItem from="1688869849972" duration="2721000" />
-      <workItem from="1688886659840" duration="6254000" />
+      <workItem from="1688886659840" duration="6968000" />
+      <workItem from="1688951265051" duration="3008000" />
+      <workItem from="1688998014850" duration="1781000" />
+      <workItem from="1688999828427" duration="2662000" />
     </task>
+    <task id="LOCAL-00001" summary="Ribbion 与 OpenFeign 相关代码提交">
+      <created>1688907483920</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688907483920</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +226,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Ribbion 与 OpenFeign 相关代码提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ribbion 与 OpenFeign 相关代码提交" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
