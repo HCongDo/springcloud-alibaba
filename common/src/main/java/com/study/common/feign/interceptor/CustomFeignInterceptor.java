@@ -1,13 +1,14 @@
-package com.study.feign.interceptor;
+package com.study.common.feign.interceptor;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/***
- * @Author 徐庶   QQ:1092002729
- * @Slogan 致敬大师，致敬未来的你
+/**
+ * @author hecong
+ * @version 1.0
+ * @date 2023/7/11 13:23
  */
 public class CustomFeignInterceptor implements RequestInterceptor {
 

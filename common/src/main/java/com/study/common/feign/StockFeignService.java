@@ -1,4 +1,4 @@
-package com.study.feign;
+package com.study.common.feign;
 
 import com.study.common.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;

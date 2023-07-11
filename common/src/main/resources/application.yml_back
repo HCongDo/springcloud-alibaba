@@ -42,7 +42,7 @@ feign:
         # 请求处理超时时间，默认5s
         readTimeout: 10000
         requestInterceptors[0]:
-          com.study.feign.interceptor.CustomFeignInterceptor
+          com.study.common.feign.interceptor.CustomFeignInterceptor
 
 
 
