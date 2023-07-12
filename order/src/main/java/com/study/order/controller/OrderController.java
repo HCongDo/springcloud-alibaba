@@ -1,5 +1,7 @@
 package com.study.order.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.study.common.entity.User;
 import com.study.common.feign.ProductFeignService;
 import com.study.common.feign.StockFeignService;
@@ -25,17 +27,25 @@ public class OrderController {
     @Autowired
     ProductFeignService productFeignService;
 
-//    @Value("${extension-name}")
-//    private String extensionName;
-
 
     @RequestMapping("/add")
+    @SentinelResource(value = "order-add",blockHandler = "addBlockHandler",fallback = "addfallback")
     public String add(){
-//        System.out.println("下单成功-extensionName= "+extensionName);
+        System.out.println("下单成功-extensionName= ");
+//        int i = 1/0;
         User reduct = stockFeignService.reduct();
         System.out.println(reduct.toString());
         String info = productFeignService.getInfo(1);
         System.out.println(info);
         return "Hello World";
+    }
+
+    public String addfallback(Throwable e){
+      return "异常了";
+    }
+
+
+    public String addBlockHandler(BlockException blockException){
+         return "限流了";
     }
 }
