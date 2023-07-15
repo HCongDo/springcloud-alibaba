@@ -1,7 +1,6 @@
 package com.study.sentinel;
 
 import cn.hutool.core.util.StrUtil;
-import cn.hutool.log.LogFactory;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.study.common.entity.ResultDto;
@@ -23,6 +22,10 @@ public class Limiting {
     @SentinelResource(value = "directQps",blockHandler = "directBlockHandler",fallback = "directQpsfallback")
     @ResponseBody
     public ResultDto directQps(){
+        logger.info("info-直接限流测试");
+        logger.warn("warn-直接限流测试");
+        logger.error("error-直接限流测试");
+        int i = 1/0;
         return ResultDto.success();
     }
     public ResultDto directBlockHandler(BlockException blockException){

@@ -4,23 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d876b4c-c112-41c1-975e-387bd3f47dcc" name="Default Changelist" comment="sentinel 集成相关代码">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_8_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/entity/ResultDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/fallback/StockFeignServiceFallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/sentinel/MyBlockExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order/src/main/java/com/study/sentinel/Limiting.java" afterDir="false" />
+    <list default="true" id="8d876b4c-c112-41c1-975e-387bd3f47dcc" name="Default Changelist" comment="sentinel 测试相关代码">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_csp_sentinel_datasource_nacos_1_8_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/src/main/java/com/study/exception/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/src/main/resources/bootstrap-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/src/main/resources/bootstrap-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stock/src/main/resources/logback-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/common/common.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/study/common/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/study/common/feign/StockFeignService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/feign/StockFeignService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/study/common/entity/ResultDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/entity/ResultDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/order.iml" beforeDir="false" afterPath="$PROJECT_DIR$/order/order.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/OrderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/OrderApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/sentinel/Limiting.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/sentinel/Limiting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product/product.iml" beforeDir="false" afterPath="$PROJECT_DIR$/product/product.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/springcloudalibaba.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springcloudalibaba.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock/src/main/java/com/study/stock/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/stock/src/main/java/com/study/stock/controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/stock/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/stock/stock.iml" beforeDir="false" afterPath="$PROJECT_DIR$/stock/stock.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +80,8 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/common/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/order/src/main/resources" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -84,10 +89,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\common\src\main\resources" />
+      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\order\src\main\resources" />
       <recent name="D:\work-soft\software-engineering\springcloud-alibaba\stock\src\main\resources" />
       <recent name="D:\work-soft\software-engineering\springcloud-alibaba\product\src\main\resources" />
-      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\order\src\main\resources" />
+      <recent name="D:\work-soft\software-engineering\springcloud-alibaba\common\src\main\resources" />
       <recent name="D:\work-soft\software-engineering\springcloud-alibaba\order\target\classes" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -201,7 +206,9 @@
       <workItem from="1689061011022" duration="592000" />
       <workItem from="1689061619053" duration="4909000" />
       <workItem from="1689122872454" duration="7070000" />
-      <workItem from="1689210283774" duration="13676000" />
+      <workItem from="1689210283774" duration="13911000" />
+      <workItem from="1689296182756" duration="9009000" />
+      <workItem from="1689409866316" duration="18062000" />
     </task>
     <task id="LOCAL-00001" summary="Ribbion 与 OpenFeign 相关代码提交">
       <created>1688907483920</created>
@@ -259,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689174306280</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="sentinel 测试相关代码">
+      <created>1689259483902</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689259483902</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +297,8 @@
     <MESSAGE value="Nacot config 新增相关配置笔记：" />
     <MESSAGE value="git 代理测试" />
     <MESSAGE value="sentinel 集成相关代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="sentinel 集成相关代码" />
+    <MESSAGE value="sentinel 测试相关代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="sentinel 测试相关代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

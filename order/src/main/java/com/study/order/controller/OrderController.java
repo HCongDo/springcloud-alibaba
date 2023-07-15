@@ -38,7 +38,7 @@ public class OrderController {
      */
     @RequestMapping("/add")
     @ResponseBody
-    public ResultDto add(){
+    public ResultDto add() throws Exception{
         System.out.println("下单成功");
         User reduct = stockFeignService.reduct();
         System.out.println(reduct.toString());

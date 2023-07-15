@@ -24,6 +24,10 @@ spring:
           data-id: common-mysql.yml # 配置文件名-Data Id
           group: DEFAULT_GROUP   # 默认为DEFAULT_GROUP
           refresh: true   # 是否动态刷新，默认为false
+        shared-configs[1]:
+          data-id: common-logback-nacos.xml
+          group: DEFAULT_GROUP
+          refresh: true
       # Nacos 认证用户 认证密码
       username: nacos
       password: nacos
