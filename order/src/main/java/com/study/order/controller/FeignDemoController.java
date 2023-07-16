@@ -1,28 +1,21 @@
 package com.study.order.controller;
 
-import com.alibaba.csp.sentinel.annotation.SentinelResource;
-import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.study.common.entity.ResultDto;
 import com.study.common.entity.User;
 import com.study.common.feign.ProductFeignService;
 import com.study.common.feign.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author hecong
- * @version 1.0
- * @date 2023/7/8 11:25
+ * Feign 内部服务调用 Demo
  */
-@RefreshScope //动态刷新配置 - nacos config
 @RestController
-@RequestMapping("/order")
-public class OrderController {
+@RequestMapping("/feign")
+public class FeignDemoController {
 
     @Qualifier("com.study.common.feign.StockFeignService")
     @Autowired
@@ -36,15 +29,14 @@ public class OrderController {
      * 案例： openFeign
      * @return
      */
-    @RequestMapping("/add")
+    @RequestMapping("/test")
     @ResponseBody
-    public ResultDto add() throws Exception{
-        System.out.println("下单成功");
+    public ResultDto test() throws Exception{
+        System.out.println("进入feign-demo逻辑");
         User reduct = stockFeignService.reduct();
         System.out.println(reduct.toString());
-        String info = productFeignService.getInfo(1);
+        String info = productFeignService.seata();
         System.out.println(info);
         return ResultDto.success();
     }
-
 }

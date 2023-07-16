@@ -12,15 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class TestDatasource {
 
-    @Autowired
-    JdbcTemplate jdbcTemplate;
 
     @Test
     public void test() {
-        String sql = "SELECT username FROM roles ";
-        // 通过jdbcTemplate查询数据库
-        String userName = (String) jdbcTemplate.queryForObject(sql, new Object[]{0}, String.class);
-        System.out.println(userName);
     }
 
 }

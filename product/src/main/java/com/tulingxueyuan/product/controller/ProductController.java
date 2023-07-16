@@ -1,12 +1,13 @@
 package com.tulingxueyuan.product.controller;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.web.bind.annotation.PathVariable;
+import com.tulingxueyuan.product.entity.Customer;
+import com.tulingxueyuan.product.mapper.CustomerMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.concurrent.TimeUnit;
 
 /***
  * @Author 徐庶   QQ:1092002729
@@ -16,14 +17,23 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping("/product")
 public class ProductController {
 
-//    @Value("${server.port}")
-//    String port;
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping("/{id}")
-    public String get(@PathVariable Integer id) throws InterruptedException {
-//        Thread.sleep(4000);
-        System.out.println("查询商品"+id);
-        return "查询商品"+id+":";
+    @Autowired
+    CustomerMapper customerMapper;
+
+    @RequestMapping("/seata")
+//    @Transactional
+    public String seata()  {
+        Customer customer = new Customer();
+        customer.setName("王五");
+        customer.setPhone("15700739495");
+        customer.setAge(14);
+        int insert = customerMapper.insert(customer);
+        logger.info("product-customer插入结果: {}",insert);
+        return "seata test result";
     }
+
+
 
 }

@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * nacos order-service 配置文件中将此文件配置为了 feign 拦截器
  * @author hecong
  * @version 1.0
  * @date 2023/7/11 13:23

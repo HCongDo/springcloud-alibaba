@@ -1,4 +1,4 @@
-package com.study.sentinel;
+package com.study.order.controller;
 
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * sentinel 限流、熔断降级 Demo
+ */
 @RestController
 @RequestMapping("/sentinel")
-public class Limiting {
+public class SentinelDemoController {
 
     Logger logger= LoggerFactory.getLogger(this.getClass());
 

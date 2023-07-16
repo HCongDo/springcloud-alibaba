@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(name = "product-service",path = "/product")
 public interface ProductFeignService {
 
-    @RequestMapping("/{id}")
-    public String getInfo(@PathVariable("id") Integer id);
+    @RequestMapping("/seata")
+    public String seata();
 
 
 }
