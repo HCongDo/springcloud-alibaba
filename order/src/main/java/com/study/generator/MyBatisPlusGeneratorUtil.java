@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 public class MyBatisPlusGeneratorUtil {
 
     public static void main(String[] args) {
-        FastAutoGenerator.create("jdbc:mysql://139.199.175.93:3306/study", "hc", "Hc_123456")
+        FastAutoGenerator.create("jdbc:mysql://139.199.175.93:3306/com.study", "hc", "Hc_123456")
                 //全局配置
                 .globalConfig(builder -> {
                     builder.author("hc") //设置作者
@@ -16,12 +16,12 @@ public class MyBatisPlusGeneratorUtil {
                 })
                 //包配置
                 .packageConfig(builder -> {
-                    builder.parent("com.study") //包名的前缀
+                    builder.parent("com.com.study") //包名的前缀
                             .entity("entity") //实体类包名
                             .mapper("mapper") //mapper接口包名
                             .service("service") //service包名
                             .controller("controller") //controller包名
-                            .xml("com.study.order.mapper"); //映射文件包名
+                            .xml("com.com.study.order.mapper"); //映射文件包名
                 })
                 //策略配置
                 .strategyConfig(builder -> {

@@ -7,10 +7,12 @@
 		<module>stock</module>
 		<module>common</module>
 		<module>product</module>
+		<module>seata-a</module>
+		<module>seata-b</module>
 	</modules>
 	<!--parent 标签写法替换成为了dependencyManagement 标签写法-->
 	<!--springboot的版本管理器 以后公司中开发就可以使用parent去继承公司自定义的父maven项目-->
-	<groupId>com.study.springcloud</groupId>
+	<groupId>com.com.study.springcloud</groupId>
 	<artifactId>springcloudalibaba</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springcloudalibaba</name>

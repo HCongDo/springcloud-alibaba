@@ -3,6 +3,7 @@ package com.study.order.controller;
 import com.study.common.entity.ResultDto;
 import com.study.common.entity.User;
 import com.study.common.feign.ProductFeignService;
+import com.study.common.feign.SeaFeignService;
 import com.study.common.feign.StockFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -24,6 +25,9 @@ public class FeignDemoController {
     @Autowired
     ProductFeignService productFeignService;
 
+    @Autowired
+    SeaFeignService seaFeignService;
+
 
     /**
      * 案例： openFeign
@@ -35,8 +39,8 @@ public class FeignDemoController {
         System.out.println("进入feign-demo逻辑");
         User reduct = stockFeignService.reduct();
         System.out.println(reduct.toString());
-        String info = productFeignService.seata();
-        System.out.println(info);
+        ResultDto info = productFeignService.seata();
+        System.out.println(info.getData());
         return ResultDto.success();
     }
 }

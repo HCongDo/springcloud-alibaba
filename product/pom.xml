@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>springcloudalibaba</artifactId>
-        <groupId>com.study.springcloud</groupId>
+        <groupId>com.com.study.springcloud</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -12,7 +12,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.study.springcloud</groupId>
+            <groupId>com.com.study.springcloud</groupId>
             <artifactId>common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

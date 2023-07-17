@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
       <module fileurl="file://$PROJECT_DIR$/product/product.iml" filepath="$PROJECT_DIR$/product/product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seata-a/seata-a.iml" filepath="$PROJECT_DIR$/seata-a/seata-a.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seata-b/seata-b.iml" filepath="$PROJECT_DIR$/seata-b/seata-b.iml" />
       <module fileurl="file://$PROJECT_DIR$/springcloudalibaba.iml" filepath="$PROJECT_DIR$/springcloudalibaba.iml" />
       <module fileurl="file://$PROJECT_DIR$/stock/stock.iml" filepath="$PROJECT_DIR$/stock/stock.iml" />
     </modules>
