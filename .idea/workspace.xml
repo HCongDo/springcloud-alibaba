@@ -4,60 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d876b4c-c112-41c1-975e-387bd3f47dcc" name="Default Changelist" comment="集成mybatis plus 、 适配 logback 相关代码">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/fallback/SeataFeignServiceFallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/feign/SeaFeignService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/config/FeignConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/config/MyBatisAutoFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/config/MybatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product/src/main/resources/mapper/CustomerMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-a/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-a/seata-a.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-a/src/main/java/com/study/SeataA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-a/src/main/java/com/study/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-a/src/main/java/com/study/order/controller/SeataDemoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-a/src/main/java/com/study/order/entity/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-a/src/main/java/com/study/order/mapper/PersonMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-a/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-a/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/seata-b.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/java/com/study/SeataB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/java/com/study/config/CustomerIdGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/java/com/study/config/DataSourcesProxyConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/java/com/study/config/IdGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/java/com/study/config/MyBatisAutoFill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/java/com/study/order/controller/SeataDemoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/java/com/study/order/entity/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/java/com/study/order/mapper/CustomerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-b/src/main/resources/mapper/CustomerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/study/common/fallback/StockFeignServiceFallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/fallback/StockFeignServiceFallBack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/study/common/feign/ProductFeignService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/feign/ProductFeignService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/resources/application.yml_back" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/application.yml_back" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order/pom.xml" afterDir="false" />
+    <list default="true" id="8d876b4c-c112-41c1-975e-387bd3f47dcc" name="Default Changelist" comment="seata 与 mybatis plus 集成相关代码">
       <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/exception/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/exception/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/generator/MyBatisPlusGeneratorUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/generator/MyBatisPlusGeneratorUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/FeignDemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/FeignDemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/SeataDemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/SeataDemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/resources/bootstrap-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/bootstrap-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/src/main/resources/mapper/PersonMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/mapper/PersonMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/ProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/ProductApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/mapper/CustomerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/com/tulingxueyuan/product/mapper/CustomerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stock/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/stock/src/main/resources/logback-spring.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -301,7 +250,7 @@
       <workItem from="1689517285442" duration="228000" />
       <workItem from="1689558468668" duration="5006000" />
       <workItem from="1689564067876" duration="4799000" />
-      <workItem from="1689570727048" duration="20279000" />
+      <workItem from="1689570727048" duration="20762000" />
     </task>
     <task id="LOCAL-00001" summary="Ribbion 与 OpenFeign 相关代码提交">
       <created>1688907483920</created>
@@ -380,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689517353090</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="seata 与 mybatis plus 集成相关代码">
+      <created>1689604805972</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689604805972</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +347,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -407,6 +375,7 @@
     <MESSAGE value="sentinel 测试相关代码" />
     <MESSAGE value="logback 日志集成相关代码" />
     <MESSAGE value="集成mybatis plus 、 适配 logback 相关代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="集成mybatis plus 、 适配 logback 相关代码" />
+    <MESSAGE value="seata 与 mybatis plus 集成相关代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="seata 与 mybatis plus 集成相关代码" />
   </component>
 </project>
