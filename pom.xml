@@ -7,8 +7,8 @@
 		<module>stock</module>
 		<module>common</module>
 		<module>product</module>
-		<module>seata-a</module>
-		<module>seata-b</module>
+		<module>seata-client-standards</module>
+		<module>seata-datasource-proxy</module>
 	</modules>
 	<!--parent 标签写法替换成为了dependencyManagement 标签写法-->
 	<!--springboot的版本管理器 以后公司中开发就可以使用parent去继承公司自定义的父maven项目-->
