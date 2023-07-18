@@ -13,9 +13,9 @@
 	<!--parent 标签写法替换成为了dependencyManagement 标签写法-->
 	<!--springboot的版本管理器 以后公司中开发就可以使用parent去继承公司自定义的父maven项目-->
 	<groupId>com.com.study.springcloud</groupId>
-	<artifactId>springcloudalibaba</artifactId>
+	<artifactId>springcloud-alibaba</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springcloudalibaba</name>
+	<name>springcloud-alibaba</name>
 	<description>Spring Cloud Alibaba</description>
 	<packaging>pom</packaging>
 
