@@ -19,14 +19,16 @@ import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.PostConstruct;
-import java.util.HashMap;
 
-/***
- * @Author 徐庶   QQ:1092002729
- * @Slogan 致敬大师，致敬未来的你
+/**
+ *  sentinel 限流、熔断降级相关异常处理器
+ *  此处有个坑：sentinel dashboard 中配置降级选择异常数，子服务500是不会触发，只有子服务宕机才有效
+ * @author hecong
+ * @version 1.0
+ * @date 2023/7/8 11:25
  */
 @Configuration
-public class GatewayConfig {
+public class GatewaySentinelExceptionConfig {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -36,20 +38,18 @@ public class GatewayConfig {
              @Override
              public Mono<ServerResponse> handleRequest(ServerWebExchange exchange, Throwable e) {
                  ResultDto resultDto = new ResultDto();
-                 if (e instanceof FlowException) {
+              // 标准错误编码可参考 resultDto.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
+                 if (e instanceof FlowException || e instanceof ParamFlowException) {
                      resultDto = ResultDto.error(100,"接口限流了");
                  } else if (e instanceof DegradeException) {
                      resultDto = ResultDto.error(101,"服务降级了");
-                 } else if (e instanceof ParamFlowException) {
-                     resultDto = ResultDto.error(102,"热点参数限流了");
                  } else if (e instanceof SystemBlockException) {
                      resultDto = ResultDto.error(103,"触发系统保护规则了");
                  } else if (e instanceof AuthorityException) {
                      resultDto = ResultDto.error(104,"授权规则不通过");
                  }
-                 logger.error(e.getMessage());
-//                 resultDto.setStatus(HttpStatus.TOO_MANY_REQUESTS.value());
-                 // 自定义异常处理
+                 logger.error("sentinel 报错信息: ");
+                 e.printStackTrace();
                  return ServerResponse.status(HttpStatus.OK)
                          .contentType(MediaType.APPLICATION_JSON)
                          .body(BodyInserters.fromValue(resultDto));

@@ -16,15 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- *  Mybatis plue Demo
+ *  Gateway 网关测试Demo
  * @author hecong
  * @version 1.0
  * @date 2023/7/8 11:25
  */
 @RefreshScope //动态刷新配置 - nacos config
 @RestController
-@RequestMapping("/mybatis")
-public class MybatisPlusDemoController {
+@RequestMapping("/gateway")
+public class GatewayDemoController {
 
     @Autowired
     PersonMapper personMapper;
@@ -34,7 +34,20 @@ public class MybatisPlusDemoController {
 
 
     /**
-     * 案例：mybatis-plus mapper.xml 联动
+     * 案例：gateway 延时熔断降级
+     * @return
+     */
+    @RequestMapping("/err")
+    @ResponseBody
+    public ResultDto err() throws Exception{
+       Thread.sleep(5000);
+        List<Person> persons = personMapper.selectPersonList();
+        return ResultDto.success(persons);
+    }
+
+
+    /**
+     * 案例：gateway 查询列表
      * @return
      */
     @RequestMapping("/list")
@@ -44,17 +57,6 @@ public class MybatisPlusDemoController {
         return ResultDto.success(persons);
     }
 
-
-    /**
-     * 案例：mybatis-plus base查询
-     * @return
-     */
-    @RequestMapping("/customer")
-    @ResponseBody
-    public ResultDto customer() throws Exception{
-        Customer customer = customerMapper.selectById(1);
-        return ResultDto.success(customer);
-    }
 
     /**
      * 案例：mybatis-plus  分页插件

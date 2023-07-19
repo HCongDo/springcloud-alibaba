@@ -110,7 +110,7 @@
 
     <!-- gateway 日志记录 -->
     <appender name="accessLog" class="ch.qos.logback.core.FileAppender">
-        <file>gateway_log.log</file>
+        <file>logs/gateway_log.log</file>
         <encoder>
             <pattern>%msg%n</pattern>
         </encoder>

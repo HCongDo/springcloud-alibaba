@@ -8,10 +8,11 @@ import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 import org.springframework.web.util.pattern.PathPatternParser;
 
 /***
+ * 全局跨域设置，yml中已配置，此处@Configuration 注释
  * @Author 徐庶   QQ:1092002729
  * @Slogan 致敬大师，致敬未来的你
  */
-@Configuration
+//@Configuration
 public class CorsConfig {
     @Bean
     public CorsWebFilter corsFilter() {
