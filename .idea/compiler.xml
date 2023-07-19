@@ -7,9 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="seata-client-standards" />
         <module name="product" />
-        <module name="seata-b" />
-        <module name="seata-a" />
+        <module name="seata-datasource-proxy" />
         <module name="stock" />
         <module name="common" />
         <module name="order" />
@@ -21,6 +21,8 @@
       <module name="product" target="1.8" />
       <module name="seata-a" target="1.8" />
       <module name="seata-b" target="1.8" />
+      <module name="seata-client-standards" target="1.8" />
+      <module name="seata-datasource-proxy" target="1.8" />
       <module name="springcloudalibaba" target="1.8" />
       <module name="stock" target="1.8" />
     </bytecodeTargetLevel>
