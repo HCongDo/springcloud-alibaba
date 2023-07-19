@@ -49,4 +49,3 @@ spring:
       username: nacos
       # Nacos 认证密码
       password: nacos
-    #配置分布式事务分组，具体值在seata服务端安装目录的/seata/script/config-center/config.txt中
