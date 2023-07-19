@@ -1,4 +1,4 @@
-package com.study.common.sentinel;
+package com.study.exception.sentinel;
 
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.BlockExceptionHandler;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
@@ -12,7 +12,6 @@ import com.study.common.entity.ResultDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Component;
 
 //@Component
 public class MyBlockExceptionHandler implements BlockExceptionHandler {

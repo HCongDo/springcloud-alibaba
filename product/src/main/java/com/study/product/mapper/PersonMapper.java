@@ -1,7 +1,7 @@
-package com.tulingxueyuan.product.mapper;
+package com.study.product.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.tulingxueyuan.product.entity.Person;
+import com.study.product.entity.Person;
 
 import java.util.List;
 

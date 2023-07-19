@@ -2,7 +2,7 @@
 <configuration debug="true">
     <!-- 读取 bootstrap.yml 中的配置值 -->
     <!-- 读取项目名称 -->
-    <springProperty  name="applicationName" source="spring.application.name" />
+    <springProperty name="applicationName" source="spring.application.name"/>
 
     <contextName>${applicationName}</contextName>
 
@@ -18,7 +18,9 @@
             <!-- %msg：日志打印详情 -->
             <!-- %n:换行符 -->
             <!-- %highlight():转换说明符以粗体红色显示其级别为ERROR的事件，红色为WARN，BLUE为INFO，以及其他级别的默认颜色。 -->
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) --- [%15.15(%thread)] %cyan(%-40.40(%logger{40})) : %msg%n</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) --- [%15.15(%thread)] %cyan(%-40.40(%logger{40}))
+                : %msg%n
+            </pattern>
             <!-- 控制台也要使用UTF-8，不要使用GBK，否则会中文乱码 -->
             <charset>UTF-8</charset>
         </encoder>
@@ -39,8 +41,8 @@
         <append>true</append>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>INFO</level>
-<!--            <onMatch>ACCEPT</onMatch>&lt;!&ndash; 如果大于INFO就命中 &ndash;&gt;-->
-<!--            <onMismatch>DENY</onMismatch>&lt;!&ndash; 如果小于INFO忽略 &ndash;&gt;-->
+            <!--            <onMatch>ACCEPT</onMatch>&lt;!&ndash; 如果大于INFO就命中 &ndash;&gt;-->
+            <!--            <onMismatch>DENY</onMismatch>&lt;!&ndash; 如果小于INFO忽略 &ndash;&gt;-->
         </filter>
         <!--有两个与RollingFileAppender交互的重要子组件。 第一个RollingFileAppender子组件，即RollingPolicy:负责执行翻转所需的操作。
          RollingFileAppender的第二个子组件，即TriggeringPolicy:将确定是否以及何时发生翻转。 因此，RollingPolicy负责什么和TriggeringPolicy负责什么时候.
@@ -105,6 +107,21 @@
         </encoder>
     </appender>
 
+
+    <!-- gateway 日志记录 -->
+    <appender name="accessLog" class="ch.qos.logback.core.FileAppender">
+        <file>gateway_log.log</file>
+        <encoder>
+            <pattern>%msg%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="async" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="accessLog"/>
+    </appender>
+    <logger name="reactor.netty.http.server.AccessLog" level="INFO" additivity="false">
+        <appender-ref ref="async"/>
+    </logger>
+
     <!--给定记录器的每个启用的日志记录请求都将转发到该记录器中的所有appender以及层次结构中较高的appender（不用在意level值）。
     换句话说，appender是从记录器层次结构中附加地继承的。
     例如，如果将控制台appender添加到根记录器，则所有启用的日志记录请求将至少在控制台上打印。
@@ -112,46 +129,53 @@
     通过将记录器的additivity标志设置为false，可以覆盖此默认行为，以便不再添加appender累积-->
     <!-- configuration中最多允许一个root，别的logger如果没有设置级别则从父级别root继承 -->
     <root level="INFO">
-        <appender-ref ref="STDOUT" />
-        <appender-ref ref="INFO_LOG" />
-        <appender-ref ref="ERROR_LOG" />
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="INFO_LOG"/>
+        <appender-ref ref="ERROR_LOG"/>
     </root>
+
+    <!-- 指定项目中某个包，当有日志操作行为时的日志记录级别 -->
+    <!-- 级别依次为【从高到低】：FATAL > ERROR > WARN > INFO > DEBUG > TRACE  -->
+    <logger name="com.com.study.seata_client_standards.mapper" level="INFO">
+        <appender-ref ref="INFO_LOG"/>
+        <appender-ref ref="ERROR_LOG"/>
+    </logger>
 
 
     <!--mybatis plus 日志输出 -->
-    <logger name="com.study.stock.mapper" additivity="false" level="DEBUG">
+    <logger name="com.com.study.seata_client_standards.mapper" additivity="false" level="DEBUG">
         <appender-ref ref="INFO_LOG"/>
         <appender-ref ref="ERROR_LOG"/>
         <appender-ref ref="STDOUT"/>
     </logger>
-    
-<!--    &lt;!&ndash; 利用logback输入mybatis的sql日志，-->
-<!--    注意：如果不加 additivity="false" 则此logger会将输出转发到自身以及祖先的logger中，就会出现日志文件中sql重复打印&ndash;&gt;-->
-<!--    <logger name="com.sailing.springbootmybatis.mapper" level="DEBUG" additivity="false">-->
-<!--        <appender-ref ref="INFO_LOG" />-->
-<!--        <appender-ref ref="ERROR_LOG" />-->
-<!--    </logger>-->
 
-<!--    &lt;!&ndash; additivity=false代表禁止默认累计的行为，即com.atomikos中的日志只会记录到日志文件中，不会输出层次级别更高的任何appender&ndash;&gt;-->
-<!--    <logger name="com.atomikos" level="INFO" additivity="false">-->
-<!--        <appender-ref ref="INFO_LOG" />-->
-<!--        <appender-ref ref="ERROR_LOG" />-->
-<!--    </logger>-->
+    <!--    &lt;!&ndash; 利用logback输入mybatis的sql日志，-->
+    <!--    注意：如果不加 additivity="false" 则此logger会将输出转发到自身以及祖先的logger中，就会出现日志文件中sql重复打印&ndash;&gt;-->
+    <!--    <logger name="com.sailing.springbootmybatis.mapper" level="DEBUG" additivity="false">-->
+    <!--        <appender-ref ref="INFO_LOG" />-->
+    <!--        <appender-ref ref="ERROR_LOG" />-->
+    <!--    </logger>-->
+
+    <!--    &lt;!&ndash; additivity=false代表禁止默认累计的行为，即com.atomikos中的日志只会记录到日志文件中，不会输出层次级别更高的任何appender&ndash;&gt;-->
+    <!--    <logger name="com.atomikos" level="INFO" additivity="false">-->
+    <!--        <appender-ref ref="INFO_LOG" />-->
+    <!--        <appender-ref ref="ERROR_LOG" />-->
+    <!--    </logger>-->
 
     <!-- 多环境兼容 -->
     <!--  开发环境和测试环境，日志输出到控制台  -->
-<!--    <springProfile name="dev|test">-->
-<!--        &lt;!&ndash;控制台和日志文件输出级别&ndash;&gt;-->
-<!--        <root level="INFO">-->
-<!--            <appender-ref ref="STDOUT" />-->
-<!--        </root>-->
-<!--    </springProfile>-->
-<!--    &lt;!&ndash;  生产环境，日志输出到文件  &ndash;&gt;-->
-<!--    <springProfile name="prod">-->
-<!--        <root level="INFO">-->
-<!--            <appender-ref ref="INFO_LOG" />-->
-<!--            <appender-ref ref="ERROR_LOG" />-->
-<!--        </root>-->
-<!--    </springProfile>-->
+    <!--    <springProfile name="dev|test">-->
+    <!--        &lt;!&ndash;控制台和日志文件输出级别&ndash;&gt;-->
+    <!--        <root level="INFO">-->
+    <!--            <appender-ref ref="STDOUT" />-->
+    <!--        </root>-->
+    <!--    </springProfile>-->
+    <!--    &lt;!&ndash;  生产环境，日志输出到文件  &ndash;&gt;-->
+    <!--    <springProfile name="prod">-->
+    <!--        <root level="INFO">-->
+    <!--            <appender-ref ref="INFO_LOG" />-->
+    <!--            <appender-ref ref="ERROR_LOG" />-->
+    <!--        </root>-->
+    <!--    </springProfile>-->
 
 </configuration>

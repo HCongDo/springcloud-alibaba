@@ -26,7 +26,6 @@ import java.util.List;
 @RequestMapping("/mybatis")
 public class MybatisPlusDemoController {
 
-
     @Autowired
     PersonMapper personMapper;
 

@@ -1,4 +1,4 @@
-package com.tulingxueyuan.product.entity;
+package com.study.product.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

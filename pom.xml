@@ -3,12 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<modules>
-		<module>Order</module>
+		<module>order</module>
 		<module>stock</module>
 		<module>common</module>
 		<module>product</module>
 		<module>seata-client-standards</module>
 		<module>seata-datasource-proxy</module>
+		<module>gateway</module>
 	</modules>
 	<!--parent 标签写法替换成为了dependencyManagement 标签写法-->
 	<!--springboot的版本管理器 以后公司中开发就可以使用parent去继承公司自定义的父maven项目-->

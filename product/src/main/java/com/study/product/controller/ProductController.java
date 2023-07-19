@@ -1,11 +1,10 @@
-package com.tulingxueyuan.product.controller;
+package com.study.product.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.study.common.entity.ResultDto;
-import com.study.common.feign.SeaFeignService;
-import com.tulingxueyuan.product.entity.Customer;
-import com.tulingxueyuan.product.mapper.CustomerMapper;
+import com.study.product.entity.Customer;
+import com.study.product.mapper.CustomerMapper;
 import io.seata.core.context.RootContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

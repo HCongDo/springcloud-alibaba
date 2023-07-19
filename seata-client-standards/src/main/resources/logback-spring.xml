@@ -119,7 +119,7 @@
 
 
     <!--mybatis plus 日志输出 -->
-    <logger name="com.tulingxueyuan.product.mapper" additivity="false" level="DEBUG">
+    <logger name="com.study.seata_client_standards.mapper" additivity="false" level="DEBUG">
         <appender-ref ref="INFO_LOG"/>
         <appender-ref ref="ERROR_LOG"/>
         <appender-ref ref="STDOUT"/>

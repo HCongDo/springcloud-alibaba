@@ -1,4 +1,4 @@
-package com.tulingxueyuan.product.config;
+package com.study.product.config;
 
 import feign.Logger;
 import org.springframework.context.annotation.Bean;
