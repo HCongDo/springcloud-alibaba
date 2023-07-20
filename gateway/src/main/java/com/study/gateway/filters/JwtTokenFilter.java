@@ -37,7 +37,7 @@ import static org.bouncycastle.crypto.tls.SignatureAlgorithm.rsa;
  * @version 1.0
  * @date 2023/7/20 11:43
  */
-@Component
+//@Component
 public class JwtTokenFilter implements GlobalFilter, Ordered {
 
     private String[] skipAuthUrls = {"/ljl-auth/oauth/token"};

@@ -13,7 +13,6 @@ public class StockController {
     @RequestMapping("/reduct")
     @ResponseBody
     public User reduct() throws Exception{
-        Thread.sleep(3000);
         User user = new User();
         user.setId("1");
         user.setName("张三");

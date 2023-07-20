@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/feign")
 public class FeignDemoController {
 
-    @Qualifier("com.study.common.feign.StockFeignService")
     @Autowired
     StockFeignService stockFeignService;
 

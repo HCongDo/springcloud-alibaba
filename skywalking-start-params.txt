@@ -1,0 +1,11 @@
+ # skywalking‐agent.jar的本地磁盘的路径
+­javaagent:F:\Microservices\middleware\apache-skywalking-java-agent-8.15.0\skywalking-agent\skywalking-agent.jar
+ # 在skywalking上显示的服务名 - application name
+­DSW_AGENT_NAME=gateway-service
+ # skywalking的collector服务的IP及端口
+­DSW_AGENT_COLLECTOR_BACKEND_SERVICES=127.0.0.1:11800
+
+
+­javaagent:F:\Microservices\middleware\apache-skywalking-java-agent-8.15.0\skywalking-agent\skywalking-agent.jar
+­DSW_AGENT_NAME=gateway-service
+­DSW_AGENT_COLLECTOR_BACKEND_SERVICES=127.0.0.1:11800
