@@ -28,6 +28,7 @@ public class ProductController {
 
     @RequestMapping("/seata")
     public ResultDto seata()  {
+        logger.info(" 进入 product");
         int pageNum = 1,pageSize=4;
         Page<Customer> page = new Page(pageNum, pageSize);
         QueryWrapper<Customer> queryWrapper = new QueryWrapper<Customer>();

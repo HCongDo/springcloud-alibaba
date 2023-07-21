@@ -20,7 +20,7 @@ public class MyGlobalFilter implements GlobalFilter {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info(exchange.getRequest().getPath().value());
+        log.info("网关路由：{}",exchange.getRequest().getPath().value());
         return chain.filter(exchange);
     }
 

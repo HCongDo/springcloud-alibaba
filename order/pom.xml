@@ -85,6 +85,14 @@
             <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
 
+        <!-- skywalking 链路追踪日志集成 -->
+        <dependency>
+            <groupId>org.apache.skywalking</groupId>
+            <artifactId>apm-toolkit-logback-1.x</artifactId>
+            <version>8.15.0</version>
+        </dependency>
+
+
 
     </dependencies>
 

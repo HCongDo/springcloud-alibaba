@@ -42,6 +42,15 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
         </dependency>
+        <!-- skywalking 链路追踪日志集成 -->
+        <dependency>
+            <groupId>org.apache.skywalking</groupId>
+            <artifactId>apm-toolkit-logback-1.x</artifactId>
+            <version>8.15.0</version>
+        </dependency>
+
+
+
         <!-- mybatis-plus 持久层框架 -->
         <dependency>
             <groupId>com.baomidou</groupId>
