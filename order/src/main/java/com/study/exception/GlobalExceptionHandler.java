@@ -1,4 +1,4 @@
-package com.study.exception.global;
+package com.study.exception;
 
 import com.study.common.entity.ResultDto;
 import org.slf4j.Logger;
@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-//@RestControllerAdvice
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     Logger logger=   LoggerFactory.getLogger(this.getClass());
