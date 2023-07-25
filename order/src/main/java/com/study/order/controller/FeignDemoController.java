@@ -33,17 +33,27 @@ public class FeignDemoController {
 
 
     /**
-     * 案例： openFeign
+     * 案例： openFeign seata
      * @return
      */
-    @RequestMapping("/test")
+        @RequestMapping("/seata")
     @ResponseBody
-    public ResultDto test() throws Exception{
-        logger.info("进入feign-demo逻辑");
+    public ResultDto seata() throws Exception{
         User reduct = stockFeignService.reduct();
         System.out.println(reduct.toString());
         ResultDto info = productFeignService.seata();
         logger.info(info.getData().toString());
         return ResultDto.success();
+    }
+
+
+    /**
+     * 案例： openFeign err 错误链测试
+     * @return
+     */
+    @RequestMapping("/err")
+    @ResponseBody
+    public ResultDto err() throws Exception{
+        return productFeignService.err();
     }
 }

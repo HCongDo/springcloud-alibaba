@@ -48,4 +48,12 @@ public class ProductController {
 
 
 
+    @RequestMapping("/err")
+    public ResultDto err()  {
+        int i = 1 / 0;
+        return ResultDto.success("err");
+
+    }
+
+
 }

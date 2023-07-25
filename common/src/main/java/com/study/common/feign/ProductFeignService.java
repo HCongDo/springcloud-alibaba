@@ -11,5 +11,7 @@ public interface ProductFeignService {
     @RequestMapping("/seata")
     public ResultDto seata();
 
+    @RequestMapping("/err")
+    public ResultDto err();
 
 }
