@@ -1,0 +1,46 @@
+server:
+  port: 8084
+# 数据源
+spring:
+  datasource:
+    username: hc
+    password: Hc_123456
+    url: jdbc:mysql://139.199.175.93:3306/study?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: seata-datasource-proxy
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 139.199.175.93:8848
+        username: nacos
+        password: nacos
+# mybatis-plus 相关配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  mapper-locations: mapper/*.xml
+seata:
+  #在客户端获取nacos中seata服务端的配置信息
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server-window
+      server-addr: 139.199.175.93:8848
+      username: nacos
+      password: nacos
+      group: SEATA_GROUP
+  #在客户端获取nacos中seata客户端的配置信息
+  config:
+    type: nacos
+    nacos:
+      server-addr: 139.199.175.93:8848
+      username: nacos
+      password: nacos
+      group: SEATA_GROUP
+  enabled: true
+  application-id: seata-datasource-proxy
+   #配置分布式事务分组，具体值在seata服务端安装目录的/seata/script/config-center/config.txt中
+  tx-service-group: default_tx_group
+  #关闭自动数据库注入，如果没有DataSourcesProxyConfig手动注入，则会事务失效
+  enable-auto-data-source-proxy: false

@@ -21,7 +21,7 @@ public class MyBatisPlusGeneratorUtil {
                             .mapper("mapper") //mapper接口包名
                             .service("service") //service包名
                             .controller("controller") //controller包名
-                            .xml("com.com.study.order.mapper"); //映射文件包名
+                            .xml("com.com.study.seata_client_standards.mapper"); //映射文件包名
                 })
                 //策略配置
                 .strategyConfig(builder -> {

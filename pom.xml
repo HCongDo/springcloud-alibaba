@@ -3,26 +3,28 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<modules>
-		<module>Order</module>
+		<module>order</module>
 		<module>stock</module>
 		<module>common</module>
 		<module>product</module>
-		<module>seata-a</module>
-		<module>seata-b</module>
+		<module>seata-client-standards</module>
+		<module>seata-datasource-proxy</module>
+		<module>gateway</module>
+		<module>authentication</module>
 	</modules>
 	<!--parent 标签写法替换成为了dependencyManagement 标签写法-->
 	<!--springboot的版本管理器 以后公司中开发就可以使用parent去继承公司自定义的父maven项目-->
 	<groupId>com.com.study.springcloud</groupId>
-	<artifactId>springcloudalibaba</artifactId>
+	<artifactId>springcloud-alibaba</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springcloudalibaba</name>
+	<name>springcloud-alibaba</name>
 	<description>Spring Cloud Alibaba</description>
 	<packaging>pom</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<spring.cloud.alibaba.version>2.2.9.RELEASE</spring.cloud.alibaba.version>
-		<spring.boot.version>2.3.2.RELEASE</spring.boot.version>
+		<spring.boot.version>2.3.12.RELEASE</spring.boot.version>
 		<spring.cloud.version>Hoxton.SR12</spring.cloud.version>
 		<hutool.version>5.8.15</hutool.version>
 	</properties>
@@ -32,82 +34,29 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<!--nacos 配置中心 -->
-		<dependency>
-			<groupId>com.alibaba.cloud</groupId>
-			<artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-		</dependency>
-		<!--nacos-服务注册发现-->
-		<dependency>
-			<groupId>com.alibaba.cloud</groupId>
-			<artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-		</dependency>
-		<!--openfeign-服务内部调用-->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-openfeign</artifactId>
-		</dependency>
-        <!-- sentinel 限流、熔断降级 -->
-		<dependency>
-			<groupId>com.alibaba.cloud</groupId>
-			<artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-		</dependency>
-		<!-- sentinel 利用 nacos 进行持久化 -->
-		<dependency>
-			<groupId>com.alibaba.csp</groupId>
-			<artifactId>sentinel-datasource-nacos</artifactId>
-		</dependency>
-		<!-- seata 分布式事务 -->
-		 <dependency>
-		 <groupId>com.alibaba.cloud</groupId>
-		 <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-		 </dependency>
-
-
-		<!-- mybatis-plus 持久层框架 -->
-		<dependency>
-			<groupId>com.baomidou</groupId>
-			<artifactId>mybatis-plus-boot-starter</artifactId>
-			<version>3.5.2</version>
-		</dependency>
-		<!-- mybatis-plus代码生成器 -->
-		<dependency>
-			<groupId>com.baomidou</groupId>
-			<artifactId>mybatis-plus-generator</artifactId>
-			<version>3.5.1</version>
-		</dependency>
-		<!-- mybatis-plus代码生成器依赖的模板引擎 -->
-		<dependency>
-			<groupId>org.apache.velocity</groupId>
-			<artifactId>velocity-engine-core</artifactId>
-			<version>2.3</version>
-		</dependency>
-		<!--MySQL jdbc 驱动-->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
-		<!-- jdbc -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
-        <!-- get set -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
 		</dependency>
 		<!-- logback+slf4j实现日志的记录 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-logging</artifactId>
 		</dependency>
+		<!-- get set -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<!-- fastjson -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>2.0.24</version>
+		</dependency>
+
 
 	</dependencies>
 
@@ -139,7 +88,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
 
 	<!-- maven打包插件 -->
 	<build>

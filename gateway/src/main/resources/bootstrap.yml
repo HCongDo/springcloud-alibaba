@@ -1,0 +1,21 @@
+server:
+  port: 7080
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    #配置Nacos
+    nacos:
+      discovery:
+        server-addr: 139.199.175.93:8848
+      config:
+        enabled: true    # 是否开启配置中心 默认true
+        server-addr: 139.199.175.93:8848
+        file-extension: yml
+        group: DEFAULT_GROUP
+        shared-configs[0]:
+          data-id: common-sentinel.yml
+          group: DEFAULT_GROUP
+          refresh: true
+      username: nacos
+      password: nacos

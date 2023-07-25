@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d876b4c-c112-41c1-975e-387bd3f47dcc" name="Default Changelist" comment="将全局异常处理器开放" />
+    <list default="true" id="8d876b4c-c112-41c1-975e-387bd3f47dcc" name="Default Changelist" comment="skywalking 相关适配">
+      <change afterPath="$PROJECT_DIR$/gateway/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/gateway/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/gateway/filters/GlobalPostFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/gateway/utils/GZIPUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/study/common/entity/ResultDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/entity/ResultDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/study/common/feign/ProductFeignService.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/study/common/feign/ProductFeignService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/study/gateway/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/gateway/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/study/gateway/config/GatewaySentinelExceptionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/java/com/study/gateway/exception/GatewaySentinelExceptionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/src/main/java/com/study/gateway/filters/MyGlobalFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/FeignDemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/FeignDemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/GatewayDemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/java/com/study/order/controller/GatewayDemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/src/main/resources/bootstrap-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order/src/main/resources/bootstrap-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/java/com/study/product/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/com/study/product/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/java/com/study/product/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/java/com/study/product/exception/GlobalExceptionHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,13 +48,25 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/springframework/spring-webmvc/5.2.15.RELEASE/spring-webmvc-5.2.15.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerMapping.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/springframework/spring-webmvc/5.2.15.RELEASE/spring-webmvc-5.2.15.RELEASE.jar!/org/springframework/web/servlet/support/AbstractDispatcherServletInitializer.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/springframework/spring-web/5.2.15.RELEASE/spring-web-5.2.15.RELEASE.jar!/org/springframework/web/context/ContextLoader.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/springframework/spring-webmvc/5.2.15.RELEASE/spring-webmvc-5.2.15.RELEASE.jar!/org/springframework/web/servlet/support/AbstractAnnotationConfigDispatcherServletInitializer.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/springframework/spring-web/5.2.15.RELEASE/spring-web-5.2.15.RELEASE.jar!/org/springframework/web/context/AbstractContextLoaderInitializer.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/springframework/spring-webmvc/5.2.15.RELEASE/spring-webmvc-5.2.15.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.46/tomcat-embed-core-9.0.46.jar!/org/apache/catalina/core/ApplicationContext.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/springframework/spring-webmvc/5.2.15.RELEASE/spring-webmvc-5.2.15.RELEASE.jar!/org/springframework/web/servlet/HandlerExecutionChain.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/springframework/spring-webmvc/5.2.15.RELEASE/spring-webmvc-5.2.15.RELEASE.jar!/org/springframework/web/servlet/handler/AbstractHandlerMethodMapping.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../environment/maven-repository/org/springframework/spring-web/5.2.15.RELEASE/spring-web-5.2.15.RELEASE.jar!/org/springframework/web/context/ContextLoaderListener.class" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="D:\work-soft\software-engineering\environment\apache-maven-3.5.3\repository" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../environment/apache-maven-3.5.3" />
+        <option name="localRepository" value="D:\environment\maven-repository" />
+        <option name="mavenHome" value="D:\environment\apache-maven-3.5.3" />
         <option name="usePluginRegistry" value="true" />
-        <option name="userSettingsFile" value="D:\work-soft\software-engineering\environment\apache-maven-3.5.3\conf\settings.xml" />
+        <option name="userSettingsFile" value="D:\environment\apache-maven-3.5.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
@@ -65,12 +94,24 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/seata-b/src/main/java/com/study/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../environment/maven-repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.46/tomcat-embed-core-9.0.46.jar" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35402298" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="spring.boot" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -94,11 +135,11 @@
       <recent name="com.study.order.controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.study.entity" />
+      <recent name="com.study.gateway.exception" />
+      <recent name="com.study.product.exception" />
       <recent name="com.study.handler" />
       <recent name="com.study.common.fallback" />
-      <recent name="com.study.config" />
-      <recent name="com.study.order.config" />
-      <recent name="com.study.order.feign" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -108,7 +149,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SeataB_8084">
+  <component name="RunManager" selected="Application.OrderApplication">
     <configuration name="MyBatisPlusGeneratorUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.study.generator.MyBatisPlusGeneratorUtil" />
       <module name="order" />
@@ -147,44 +188,117 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="seata-b" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="seata-b" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="authentication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.authentication.AuthenticationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GateWayApplition_7080" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.gateway.GateWayApplition" />
+      <option name="VM_PARAMETERS" value="­javaagent:D:\work\Microservices\middleware\skywalking\skywalking-agent\skywalking-agent.jar ­DSW_AGENT_NAME=work::gateway-service ­DSW_AGENT_COLLECTOR_BACKEND_SERVICES=139.199.175.93:11800 ­Xms128m ­Xmx256m" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderApplication-lb_7070" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.OrderApplication" />
+      <option name="VM_PARAMETERS" value="­javaagent:D:\work\Microservices\middleware\skywalking\skywalking-agent\skywalking-agent.jar ­DSW_AGENT_NAME=work::order-service ­DSW_AGENT_COLLECTOR_BACKEND_SERVICES=139.199.175.93:11800 ­Xms128m ­Xmx256m ­Dserver.port=7070" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrderApplication_8080" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="order" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.OrderApplication" />
+      <option name="VM_PARAMETERS" value="­javaagent:D:\work\Microservices\middleware\skywalking\skywalking-agent\skywalking-agent.jar ­DSW_AGENT_NAME=work::order-service ­DSW_AGENT_COLLECTOR_BACKEND_SERVICES=139.199.175.93:11800 ­Xms128m ­Xmx256m ­Dserver.port=8080" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductApplication-lb_7082" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="product" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.product.ProductApplication" />
+      <option name="VM_PARAMETERS" value="­javaagent:D:\work\Microservices\middleware\skywalking\skywalking-agent\skywalking-agent.jar ­DSW_AGENT_NAME=work::product-service ­DSW_AGENT_COLLECTOR_BACKEND_SERVICES=139.199.175.93:11800 ­Xms128m ­Xmx256m ­Dserver.port=7082" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="ProductApplication_8082" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="product" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tulingxueyuan.product.ProductApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.product.ProductApplication" />
+      <option name="VM_PARAMETERS" value="­javaagent:D:\work\Microservices\middleware\skywalking\skywalking-agent\skywalking-agent.jar ­DSW_AGENT_NAME=work::product-service ­DSW_AGENT_COLLECTOR_BACKEND_SERVICES=139.199.175.93:11800 ­Xms128m ­Xmx256m ­Dserver.port=8082" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SeataA_8083" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
-      <module name="seata-a" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.study.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.SeataA" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+    <configuration name="SeataClientStandards" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="seata-client-standards" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.seata_client_standards.SeataClientStandards" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SeataB_8084" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="seata-b" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.SeataB" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+    <configuration name="SeataDatasourceProxy" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="seata-datasource-proxy" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.seata_datasource_proxy.SeataDatasourceProxy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -192,6 +306,7 @@
     <configuration name="StockApplicaiton_8081" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="stock" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.study.stock.StockApplicaiton" />
+      <option name="VM_PARAMETERS" value="­javaagent:D:\work\Microservices\middleware\skywalking\skywalking-agent\skywalking-agent.jar ­DSW_AGENT_NAME=work::stock-service ­DSW_AGENT_COLLECTOR_BACKEND_SERVICES=139.199.175.93:11800 ­Xms128m ­Xmx256m" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SHORTEN_COMMAND_LINE" value="NONE" />
       <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -205,13 +320,16 @@
       <item itemvalue="Application.MyBatisPlusGeneratorUtil" />
       <item itemvalue="Spring Boot.OrderApplication_8080" />
       <item itemvalue="Spring Boot.StockApplicaiton_8081" />
+      <item itemvalue="Spring Boot.SeataClientStandards" />
+      <item itemvalue="Spring Boot.SeataDatasourceProxy" />
+      <item itemvalue="Spring Boot.AuthenticationApplication" />
       <item itemvalue="Spring Boot.ProductApplication_8082" />
-      <item itemvalue="Spring Boot.SeataB_8084" />
-      <item itemvalue="Spring Boot.SeataA_8083" />
+      <item itemvalue="Spring Boot.OrderApplication-lb_7070" />
+      <item itemvalue="Spring Boot.ProductApplication-lb_7082" />
+      <item itemvalue="Spring Boot.GateWayApplition_7080" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.SeataA_8083" />
         <item itemvalue="Application.MyBatisPlusGeneratorUtil" />
         <item itemvalue="Application.OrderApplication" />
       </list>
@@ -246,7 +364,17 @@
       <workItem from="1689517285442" duration="228000" />
       <workItem from="1689558468668" duration="5006000" />
       <workItem from="1689564067876" duration="4799000" />
-      <workItem from="1689570727048" duration="20857000" />
+      <workItem from="1689570727048" duration="20762000" />
+      <workItem from="1689667949890" duration="3729000" />
+      <workItem from="1689671842216" duration="692000" />
+      <workItem from="1689696258467" duration="1460000" />
+      <workItem from="1689932791796" duration="2404000" />
+      <workItem from="1689996508363" duration="1276000" />
+      <workItem from="1690012118285" duration="13530000" />
+      <workItem from="1690036741635" duration="97000" />
+      <workItem from="1690096714555" duration="4977000" />
+      <workItem from="1690116667948" duration="5183000" />
+      <workItem from="1690163972496" duration="21737000" />
     </task>
     <task id="LOCAL-00001" summary="Ribbion 与 OpenFeign 相关代码提交">
       <created>1688907483920</created>
@@ -332,14 +460,35 @@
       <option name="project" value="LOCAL" />
       <updated>1689604805972</updated>
     </task>
-    <task id="LOCAL-00013" summary="将全局异常处理器开放">
-      <created>1689605325003</created>
+    <task id="LOCAL-00013" summary="seata 与 mybatis plus 集成相关代码">
+      <created>1689670848145</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1689605325003</updated>
+      <updated>1689670848145</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="删除seata 旧模块相关代码">
+      <created>1689697230915</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1689697230915</updated>
+    </task>
+    <task id="LOCAL-00015" summary="修改微服务启动内存">
+      <created>1689935218284</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689935218284</updated>
+    </task>
+    <task id="LOCAL-00016" summary="skywalking 相关适配">
+      <created>1690036830160</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1690036830160</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +528,13 @@
     <MESSAGE value="logback 日志集成相关代码" />
     <MESSAGE value="集成mybatis plus 、 适配 logback 相关代码" />
     <MESSAGE value="seata 与 mybatis plus 集成相关代码" />
-    <MESSAGE value="将全局异常处理器开放" />
-    <option name="LAST_COMMIT_MESSAGE" value="将全局异常处理器开放" />
+    <MESSAGE value="删除seata 旧模块相关代码" />
+    <MESSAGE value="修改微服务启动内存" />
+    <MESSAGE value="skywalking 相关适配" />
+    <option name="LAST_COMMIT_MESSAGE" value="skywalking 相关适配" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

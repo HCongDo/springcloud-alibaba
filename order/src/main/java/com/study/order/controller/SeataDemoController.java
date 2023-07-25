@@ -25,6 +25,9 @@ public class SeataDemoController {
     @Autowired
     ProductFeignService productFeignService;
 
+    @Autowired
+    SeaFeignService seaFeignService;
+
     @RequestMapping("test")
     @GlobalTransactional(rollbackFor = Exception.class)
     public ResultDto test(){
@@ -34,7 +37,8 @@ public class SeataDemoController {
         int insert = personMapper.insert(person);
         logger.info("seata-全局事务ID: {}", RootContext.getXID());
         logger.info("seata-person插入结果: {}",insert);
-        ResultDto seata = productFeignService.seata();
+//        ResultDto seata = productFeignService.seata();
+        ResultDto seata = seaFeignService.test();
         logger.info("seata-FeignService插入结果: {}",seata.getData());
         int i = 1/0;
         return ResultDto.success("seata test success");

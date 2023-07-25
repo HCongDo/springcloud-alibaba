@@ -6,7 +6,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@FeignClient(name = "seata-b",path = "/seata-b" , fallback = SeataFeignServiceFallBack.class)
+//@FeignClient(name = "seata-client-standards",path = "/seata" , fallback = SeataFeignServiceFallBack.class)
+@FeignClient(name = "seata-datasource-proxy",path = "/seata" , fallback = SeataFeignServiceFallBack.class)
 public interface SeaFeignService {
 
     @RequestMapping("/test")

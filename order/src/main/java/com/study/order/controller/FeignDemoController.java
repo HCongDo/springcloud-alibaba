@@ -5,6 +5,8 @@ import com.study.common.entity.User;
 import com.study.common.feign.ProductFeignService;
 import com.study.common.feign.SeaFeignService;
 import com.study.common.feign.StockFeignService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/feign")
 public class FeignDemoController {
 
-    @Qualifier("com.study.common.feign.StockFeignService")
+    Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     StockFeignService stockFeignService;
 
@@ -30,17 +33,27 @@ public class FeignDemoController {
 
 
     /**
-     * 案例： openFeign
+     * 案例： openFeign seata
      * @return
      */
-    @RequestMapping("/test")
+        @RequestMapping("/seata")
     @ResponseBody
-    public ResultDto test() throws Exception{
-        System.out.println("进入feign-demo逻辑");
+    public ResultDto seata() throws Exception{
         User reduct = stockFeignService.reduct();
         System.out.println(reduct.toString());
         ResultDto info = productFeignService.seata();
-        System.out.println(info.getData());
+        logger.info(info.getData().toString());
         return ResultDto.success();
+    }
+
+
+    /**
+     * 案例： openFeign err 错误链测试
+     * @return
+     */
+    @RequestMapping("/err")
+    @ResponseBody
+    public ResultDto err() throws Exception{
+        return productFeignService.err();
     }
 }

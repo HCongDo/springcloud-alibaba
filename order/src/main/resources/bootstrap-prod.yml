@@ -39,7 +39,7 @@ spring:
             refresh: true
           #拓展配置，利用加载顺序，用来覆盖其他配置。比如覆盖上面的共享配置某些配置项
         extension-configs[0]:
-            data-id: order-extension.yml # 配置文件名-Data Id
+            data-id: seata_client_standards-extension.yml # 配置文件名-Data Id
             group: DEFAULT_GROUP   # 默认为DEFAULT_GROUP
             refresh: true   # 是否动态刷新，默认为false
         namespace: e94ae166-1ab2-411f-b37e-7e66aa345810
