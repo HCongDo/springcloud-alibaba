@@ -1,4 +1,4 @@
-package com.study.gateway.config;
+package com.study.gateway.exception;
 
 import com.alibaba.csp.sentinel.adapter.gateway.sc.callback.BlockRequestHandler;
 import com.alibaba.csp.sentinel.adapter.gateway.sc.callback.GatewayCallbackManager;

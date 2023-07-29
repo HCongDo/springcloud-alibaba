@@ -40,7 +40,8 @@ public class GatewayDemoController {
     @RequestMapping("/err")
     @ResponseBody
     public ResultDto err() throws Exception{
-       Thread.sleep(5000);
+//        Thread.sleep(5000);
+        int i = 1/0;
         List<Person> persons = personMapper.selectPersonList();
         return ResultDto.success(persons);
     }
