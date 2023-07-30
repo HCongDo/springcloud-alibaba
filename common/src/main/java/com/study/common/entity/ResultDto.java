@@ -41,6 +41,10 @@ public class ResultDto<T> implements Serializable {
         return new ResultDto(status,msg);
     }
 
+    public static <T> ResultDto error(String msg){
+        return new ResultDto(500,msg);
+    }
+
 
     /**
      * 此构造函数给全局异常处理使用

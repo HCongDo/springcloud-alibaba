@@ -1,18 +1,8 @@
 spring:
   application:
     name: authentication-service
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 139.199.175.93:8848
-      config:
-        enabled: true    # 是否开启配置中心 默认true
-        server-addr: 139.199.175.93:8848
-        file-extension: yml
-        group: DEFAULT_GROUP
-        shared-configs[0]:
-          data-id: common-mysql.yml
-          group: DEFAULT_GROUP
-          refresh: true
-      username: nacos
-      password: nacos
+  datasource:
+    username: hc
+    password: Hc_123456
+    url: jdbc:mysql://139.199.175.93:3306/study?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
