@@ -19,6 +19,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.sql.DataSource;
 
 /**
+ * Securiry 安全配置
+ *
  * @author hecong
  * @version 1.0
  * @date 2023/7/20 12:50
@@ -78,6 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
+                .antMatchers("/oauth/authorize").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic()

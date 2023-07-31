@@ -3,6 +3,7 @@ package com.study.authentication.controller;
 import com.study.authentication.service.UserServiceImpl;
 import com.study.common.entity.ResultDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,7 +18,6 @@ import sun.plugin.liveconnect.SecurityContextHelper;
  */
 @RestController
 public class UserController {
-
 
    @Autowired
     private UserServiceImpl userService;

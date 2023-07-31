@@ -25,13 +25,12 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 /**
- * 授权服务器配置
+ *  Oauth2.0 授权服务器配置
  *
  * @author He PanFu
  * @date 2021-12-19 17:55:23
  */
 @Configuration
-@EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired private ClientDetailsService clientDetailsService;
@@ -50,13 +49,23 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 //        return new JwtTokenStore(jwtAccessTokenConverter());
 //    }
 
+    /**
+     *  定义存储和检索访问令牌的方法
+     *  用于管理访问令牌和刷新令牌的持久化存储
+     *  InMemoryTokenStore、JdbcTokenStore和JwtTokenStore等
+     * @return
+     */
     @Bean
     public TokenStore tokenStore() {
         return new InMemoryTokenStore();
     }
 
     /**
-     * 令牌服务
+     * 定义了用于处理访问令牌的方法
+     * 从TokenStore中获取令牌，并进行令牌的验证和处理
+     * 如loadAuthentication(String accessToken)用于加载与访问令牌相关联的认证信息
+     * 以及refreshAccessToken(String refreshToken,TokenRequest tokenRequest)用于刷新访问令牌等
+     * 具体的实现类如DefaultTokenServices，提供了对这些方法的具体实现
      * @return
      */
     @Bean
@@ -67,7 +76,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         // 令牌存储策略
         service.setTokenStore(tokenStore());
         // 令牌默认有效期2小时
-        service.setAccessTokenValiditySeconds(7200);
+        service.setAccessTokenValiditySeconds(720);
         // 刷新令牌默认有效期3天
         service.setRefreshTokenValiditySeconds(259200);
         return service;
@@ -94,7 +103,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 // 客户端秘钥
                 .secret(passwordEncoder.encode("secret"))
                 // 资源列表
-                .resourceIds("res1")
+                .resourceIds("user-resource")
                 // 允许授权的五种类型
                 .authorizedGrantTypes("authorization_code", "password", "client_credentials", "implicit", "refresh_token")
                 // 允许的授权范围
@@ -118,6 +127,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
         endpoints.authenticationManager(authenticationManager)
                 // 授权码模式
                 .authorizationCodeServices(authorizationCodeServices())
+                .tokenStore(tokenStore())
                 .tokenServices(tokenService())
                 // 支持的请求
                 .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST);
