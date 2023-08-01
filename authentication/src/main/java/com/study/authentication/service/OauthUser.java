@@ -1,6 +1,6 @@
 package com.study.authentication.service;
 
-import com.study.authentication.entity.BaseOperator;
+import com.study.authentication.entity.UserInfo;
 import org.springframework.security.core.CredentialsContainer;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -16,10 +16,10 @@ import java.util.Collection;
 public class OauthUser implements UserDetails, CredentialsContainer {
 
 
-    private final BaseOperator baseUser;
+    private final UserInfo baseUser;
     private final User user;
 
-    public OauthUser(BaseOperator baseUser, User user) {
+    public OauthUser(UserInfo baseUser, User user) {
         this.baseUser = baseUser;
         this.user = user;
     }
@@ -65,7 +65,7 @@ public class OauthUser implements UserDetails, CredentialsContainer {
         return user.isEnabled();
     }
 
-    public BaseOperator getBaseOperator() {
+    public UserInfo getBaseOperator() {
         return baseUser;
     }
 }

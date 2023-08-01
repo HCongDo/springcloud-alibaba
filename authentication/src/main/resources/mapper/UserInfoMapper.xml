@@ -5,7 +5,7 @@
 <mapper namespace="com.study.authentication.mapper.UserInfoMapper">
 
     <!--登录验证-->
-    <select id="getUserByUsername" resultType="com.study.authentication.entity.BaseOperator">
+    <select id="getUserByUsername" resultType="com.study.authentication.entity.UserInfo">
         select * FROM tb_user where 1=1
         <if test="username != null">
             and username = #{username}

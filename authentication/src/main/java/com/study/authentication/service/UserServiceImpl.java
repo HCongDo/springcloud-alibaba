@@ -1,6 +1,6 @@
 package com.study.authentication.service;
 
-import com.study.authentication.entity.BaseOperator;
+import com.study.authentication.entity.UserInfo;
 import com.study.authentication.mapper.UserInfoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //查询用户信息
-        BaseOperator userinfo = userInfoMapper.getUserByUsername(username);
+        UserInfo userinfo = userInfoMapper.getUserByUsername(username);
         //需要构造org.springframework.security.core.userdetails.User 对象包含账号密码还有用户的角色
         if (userinfo != null) {
             User user = new User(userinfo.getUsername(), userinfo.getPassword(), AuthorityUtils.createAuthorityList("admin"));

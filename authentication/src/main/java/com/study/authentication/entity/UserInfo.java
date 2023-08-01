@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.User;
  * @date 2023/7/20 12:59
  */
 @Data
-public class BaseOperator{
+public class UserInfo {
 
     private String userid;
     private String telphonenum;
