@@ -9,6 +9,8 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import java.util.HashMap;
 
 /**
+ *
+ *
  * @author hecong
  * @version 1.0
  * @date 2023/7/20 12:57
@@ -17,17 +19,17 @@ public class MyJwtAccessTokenConverter extends JwtAccessTokenConverter {
 
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
-        if (accessToken instanceof DefaultOAuth2AccessToken) {
-            //((DefaultOAuth2AccessToken) accessToken).setRefreshToken();
-            Object principal = authentication.getPrincipal();
-            if (principal instanceof OauthUser) {
-                OauthUser user = (OauthUser) principal;
-                HashMap<String, Object> map = new HashMap<>();
-                map.put("user_id", user.getBaseOperator().getUserid());
-                map.put("phone", user.getBaseOperator().getTelphonenum());
-                ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(map);
-            }
-        }
+//        if (accessToken instanceof DefaultOAuth2AccessToken) {
+//            Object principal = authentication.getPrincipal();
+//            if (principal instanceof OauthUser) {
+//                OauthUser user = (OauthUser) principal;
+//                HashMap<String, Object> map = new HashMap<>();
+//                map.put("id", user.getUserInfo().getId());
+//                map.put("phone", user.getUserInfo().getPhone());
+//                map.put("username",user.getUserInfo().getUsername());
+//                ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(map);
+//            }
+//        }
         return super.enhance(accessToken, authentication);
     }
 

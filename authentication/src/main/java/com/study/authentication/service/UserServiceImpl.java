@@ -18,15 +18,15 @@ import org.springframework.stereotype.Service;
  */
 @Service("userService")
 public class UserServiceImpl implements UserDetailsService {
+
     @Autowired
     private UserInfoMapper userInfoMapper;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        //查询用户信息
         UserInfo userinfo = userInfoMapper.getUserByUsername(username);
-        //需要构造org.springframework.security.core.userdetails.User 对象包含账号密码还有用户的角色
         if (userinfo != null) {
+//            User user = new User(userinfo.getUsername(), userinfo.getPassword(), AuthorityUtils.createAuthorityList(userinfo.getRoles()));
             User user = new User(userinfo.getUsername(), userinfo.getPassword(), AuthorityUtils.createAuthorityList("admin"));
             return new OauthUser(userinfo, user);
         } else {
