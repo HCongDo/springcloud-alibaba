@@ -14,7 +14,6 @@
         <module name="stock" />
         <module name="gateway" />
         <module name="order" />
-        <module name="authentication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,18 +22,10 @@
       <module name="gateway" target="1.8" />
       <module name="order" target="1.8" />
       <module name="product" target="1.8" />
-      <module name="seata-a" target="1.8" />
-      <module name="seata-b" target="1.8" />
       <module name="seata-client-standards" target="1.8" />
       <module name="seata-datasource-proxy" target="1.8" />
-      <module name="springcloudalibaba" target="1.8" />
+      <module name="springcloud-alibaba" target="1.8" />
       <module name="stock" target="1.8" />
     </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="order" options="" />
-      <module name="stock" options="" />
-    </option>
   </component>
 </project>
