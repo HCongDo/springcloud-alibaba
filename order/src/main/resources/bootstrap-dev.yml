@@ -36,10 +36,10 @@ spring:
             data-id: common-logback-nacos.xml
             group: DEFAULT_GROUP
             refresh: true
-#        shared-configs[3]:
-#          data-id: common-seata.yml
-#          group: DEFAULT_GROUP
-#          refresh: true
+        shared-configs[3]:
+          data-id: common-seata.yml  #连接客户端的信息脚本执行时注入到了nacos中的service.default.grouplist属性。服务端默认连接端口为服务端启动端口+1000
+          group: DEFAULT_GROUP
+          refresh: true
           #拓展配置，利用加载顺序，用来覆盖其他配置。比如覆盖上面的共享配置某些配置项
         extension-configs[0]:
             data-id: seata_client_standards-extension.yml # 配置文件名-Data Id

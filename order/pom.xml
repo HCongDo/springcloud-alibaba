@@ -44,6 +44,25 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
         </dependency>
+        <!-- 除了网关限流，个体服务也可自定义限流逻辑 具体显示可参考 SentinelDemoController -->
+        <!-- sentinel 限流、熔断降级 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <!-- sentinel 利用 nacos 进行持久化 -->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+        </dependency>
+        <!-- skywalking 链路追踪日志集成 -->
+        <dependency>
+            <groupId>org.apache.skywalking</groupId>
+            <artifactId>apm-toolkit-logback-1.x</artifactId>
+            <version>8.15.0</version>
+        </dependency>
+
+
         <!-- mybatis-plus 持久层框架 -->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -72,27 +91,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-
-        <!-- 除了网关限流，个体服务也可自定义限流逻辑 具体显示可参考 SentinelDemoController -->
-        <!-- sentinel 限流、熔断降级 -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-        </dependency>
-        <!-- sentinel 利用 nacos 进行持久化 -->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-datasource-nacos</artifactId>
-        </dependency>
-
-        <!-- skywalking 链路追踪日志集成 -->
-        <dependency>
-            <groupId>org.apache.skywalking</groupId>
-            <artifactId>apm-toolkit-logback-1.x</artifactId>
-            <version>8.15.0</version>
-        </dependency>
-
-
 
     </dependencies>
 
