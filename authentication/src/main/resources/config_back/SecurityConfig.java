@@ -2,8 +2,8 @@ package com.study.authentication.config;
 
 
 import com.study.authentication.service.UserServiceImpl;
+import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -19,9 +19,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * Securiry 安全配置
- *
- * @author hecong
  * @version 1.0
+ * @author hecong
  * @date 2023-08-04 17:55:23
  */
 @Configuration
@@ -31,9 +30,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Autowired
   private UserServiceImpl userService;
-//  @Autowired
-//  private CustomAuthExceptionEntryPoint authExceptionEntryPoint;
 
+  @Autowired
+  private DataSource dataSource;
+
+  @Autowired
+  private AuthExceptionEntryPoint authExceptionEntryPoint;
 
   /**
    * 注入用户信息服务
@@ -54,6 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    */
   @Autowired
   public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
+    //auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(passwordEncoder());
     auth
         .userDetailsService(userDetailsService())
         .passwordEncoder(passwordEncoder());
@@ -79,23 +82,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    */
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http
-//        .formLogin().loginPage("/login").permitAll()
-//        .and()
-        .authorizeRequests()
-        .antMatchers(HttpMethod.OPTIONS) .permitAll()
+    http.authorizeRequests()
+        .antMatchers(HttpMethod.OPTIONS).permitAll()
+        .antMatchers("/oauth/authorize").permitAll()
         .anyRequest().authenticated()
         .and()
         .httpBasic()
         .and()
         .exceptionHandling()
+        .authenticationEntryPoint(authExceptionEntryPoint)
         .and()
         .csrf().disable()
     ;
-//    http.exceptionHandling().authenticationEntryPoint(authExceptionEntryPoint);
   }
-
-
 
   @Bean
   public PasswordEncoder passwordEncoder() {

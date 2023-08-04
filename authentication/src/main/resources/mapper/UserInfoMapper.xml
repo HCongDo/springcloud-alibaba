@@ -4,12 +4,34 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.study.authentication.mapper.UserInfoMapper">
 
-    <!--登录验证-->
+    <!--用户名登录验证-->
     <select id="getUserByUsername" resultType="com.study.authentication.entity.UserInfo">
-        select * FROM tb_user where 1=1
+        SELECT *,
+        (
+        select GROUP_CONCAT(DISTINCT  r.name SEPARATOR ',') from tb_role r
+        WHERE  r.id in (SELECT role_id from tb_user_role ur where ur.user_id = t.id)
+        GROUP BY r.name
+        ) roles
+        FROM tb_user t where 1=1
         <if test="username != null">
-            and username = #{username}
+            and t.username = #{username}
         </if>
+        ORDER BY t.create_time desc LIMIT 1;
+    </select>
+
+    <!--手机验证码登录验证-->
+    <select id="getUserByUserPhone" resultType="com.study.authentication.entity.UserInfo">
+        SELECT *,
+        (
+        select GROUP_CONCAT(DISTINCT  r.name SEPARATOR ',') from tb_role r
+        WHERE  r.id in (SELECT role_id from tb_user_role ur where ur.user_id = t.id)
+        GROUP BY r.name
+        ) roles
+        FROM tb_user t  where 1=1
+        <if test="phone != null">
+            and t.phone = #{phone}
+        </if>
+        ORDER BY t.create_time desc LIMIT 1;
     </select>
 
 

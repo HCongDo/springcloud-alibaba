@@ -1,8 +1,8 @@
 package com.study.authentication.config;
 
 import com.study.authentication.exception.OAuthServerWebResponseExceptionTranslator;
-import com.study.authentication.mapper.UserInfoMapper;
 import com.study.authentication.granter.SmsCodeTokenGranter;
+import com.study.authentication.mapper.UserInfoMapper;
 import com.study.authentication.utils.MyJwtAccessTokenConverter;
 import com.study.common.utils.RSAUtil;
 import java.util.ArrayList;
@@ -15,10 +15,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.CompositeTokenGranter;
 import org.springframework.security.oauth2.provider.TokenGranter;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
@@ -41,7 +43,11 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
   @Autowired
+  private ClientDetailsService clientDetailsService;
+  @Autowired
   private AuthenticationManager authenticationManager;
+  @Autowired
+  private PasswordEncoder passwordEncoder;
   @Autowired
   private DataSource dataSource;
   @Autowired
@@ -67,6 +73,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
    */
   @Bean
   public TokenStore tokenStore() {
+    //  return new InMemoryTokenStore();
+    //  return new JdbcTokenStore(dataSource)
     return new JwtTokenStore(jwtAccessTokenConverter());
   }
 
@@ -104,6 +112,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
   @Bean
   public AuthorizationCodeServices authorizationCodeServices() {
     //设置授权码模式的授权码如何存取，暂时采用内存方式
+//        return new InMemoryAuthorizationCodeServices();
     return new JdbcAuthorizationCodeServices(dataSource);
   }
 
@@ -115,6 +124,22 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
    */
   @Override
   public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+    //  暂时使用in‐memory存储
+//        clients.inMemory()
+//                // 客户端标识
+//                .withClient("c1")
+//                // 客户端秘钥
+//                .secret(passwordEncoder.encode("secret"))
+//                // 资源列表
+//                .resourceIds("user-resource")
+//                // 允许授权的五种类型
+//                .authorizedGrantTypes("authorization_code", "password", "client_credentials", "implicit", "refresh_token")
+//                // 允许的授权范围
+//                .scopes("all")
+//                // false=跳转到授权页面，true=直接方法令牌
+//                .autoApprove(false)
+//                // 加上验证回调地址
+//                .redirectUris("http://www.baidu.com");;
     clients.jdbc(dataSource);
   }
 
@@ -128,10 +153,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     //获取SpringSecurity OAuth2.0 现有的授权类型
     List<TokenGranter> granters = new ArrayList<TokenGranter>(
         Collections.singletonList(endpoints.getTokenGranter()));
-    //短信登录
     SmsCodeTokenGranter smsCodeTokenGranter = new SmsCodeTokenGranter(endpoints.getTokenServices(),
         endpoints.getClientDetailsService(),
         endpoints.getOAuth2RequestFactory(), userInfoMapper);
+    // 向集合中添加短信授权类型
     granters.add(smsCodeTokenGranter);
     return new CompositeTokenGranter(granters);
   }
@@ -150,14 +175,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
   @Override
   public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
     endpoints.authenticationManager(authenticationManager)
-        .authorizationCodeServices(authorizationCodeServices()) // 授权码模式code相关信息
+        .authorizationCodeServices(authorizationCodeServices())     // 授权码模式code相关信息
         .tokenStore(tokenStore()) // 令牌存储于搜索
         .tokenServices(tokenService()) // token的创建
         .tokenGranter(tokenGranter(endpoints))// 新加短信登录与二维码登录
         .allowedTokenEndpointRequestMethods(HttpMethod.GET, HttpMethod.POST)
         .exceptionTranslator(webResponseExceptionTranslator())
-    ;
-
+    ; // 端点支持的请求类型
   }
 
   /**
@@ -176,10 +200,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
      * /oauth/check_token：用于资源服务访问的令牌解析端点。
      * /oauth/token_key：提供公有密匙的端点，如果你使用JWT令牌的话。
      */
+    // token_key公开
     security.tokenKeyAccess("permitAll()") // 允许公开访问令牌端点
         .checkTokenAccess("permitAll()")// 需要身份验证来检查令牌
         // 允许表单身份验证客户端 - 新增ClientCredentialsTokenEndpointFilter拦截器获取参数客户端信息创建Auth信息，这样就不会被Security 拦截器拦截了
         .allowFormAuthenticationForClients()
     ;
- }
+//         clientCredentialsTokenEndpointFilter(security);
+//         security.addTokenEndpointAuthenticationFilter(clientCredentialsTokenEndpointFilter(null));
+  }
 }

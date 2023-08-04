@@ -1,5 +1,6 @@
 package com.study.common.entity;
 
+import com.alibaba.fastjson.JSONObject;
 import java.io.Serializable;
 import lombok.Data;
 
@@ -67,5 +68,13 @@ public class ResultDto<T> implements Serializable {
         return new ResultDto(200,"请求成功");
     }
 
-
+    @Override
+    public String toString() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("applicationName",applicationName);
+        jsonObject.put("status",status);
+        jsonObject.put("msg",msg);
+        jsonObject.put("data",data);
+        return jsonObject.toString();
+    }
 }

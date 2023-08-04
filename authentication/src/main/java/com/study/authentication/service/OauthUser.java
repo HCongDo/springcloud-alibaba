@@ -16,11 +16,11 @@ import java.util.Collection;
 public class OauthUser implements UserDetails, CredentialsContainer {
 
 
-    private final UserInfo userInfo;
+    private final UserInfo baseUser;
     private final User user;
 
-    public OauthUser(UserInfo userInfo, User user) {
-        this.userInfo = userInfo;
+    public OauthUser(UserInfo baseUser, User user) {
+        this.baseUser = baseUser;
         this.user = user;
     }
 
@@ -65,12 +65,7 @@ public class OauthUser implements UserDetails, CredentialsContainer {
         return user.isEnabled();
     }
 
-
-    public UserInfo getUserInfo() {
-        return userInfo;
-    }
-
-    public User getUser() {
-        return user;
+    public UserInfo getBaseOperator() {
+        return baseUser;
     }
 }

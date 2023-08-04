@@ -109,7 +109,7 @@ public class GlobalPostFilter implements GlobalFilter, Ordered {
           }
         }
       }
-      return JSONUtil.toJsonStr(ResultDto.success(result));
+      return JSONUtil.toJsonStr(resultDto);
     } catch (Exception e) {
       logger.error("响应包装转换失败，异常信息为：", e);
       return result;
