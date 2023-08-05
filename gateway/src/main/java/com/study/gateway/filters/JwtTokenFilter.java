@@ -1,6 +1,8 @@
 package com.study.gateway.filters;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.lang.Assert;
+import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.study.common.entity.ResultDto;
 import com.study.common.utils.RSAUtil;
@@ -28,6 +30,7 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.List;
 
 import static com.sun.scenario.Settings.set;
 import static java.security.KeyRep.Type.SECRET;
@@ -81,7 +84,11 @@ public class JwtTokenFilter implements GlobalFilter, Ordered {
         return chain.filter(exchange);
       }
       String token =  exchange.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
-      Assert.notBlank(token, "权限验证失败，请先登录");
+      if(StrUtil.isBlank(token)){
+        List<String> accessTokens = exchange.getRequest().getQueryParams().get("access_token");
+        Assert.isTrue(CollUtil.isNotEmpty(accessTokens), "权限验证失败，请先登录");
+        token = accessTokens.get(0);
+      }
       Claims jwt = getTokenBody(token);
       logger.info("token解密为：{}",jwt.toString());
       ServerHttpRequest oldRequest = exchange.getRequest();

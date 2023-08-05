@@ -86,9 +86,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     // 令牌存储策略
     service.setTokenStore(tokenStore());
     // 令牌默认有效期2小时
-    service.setAccessTokenValiditySeconds(7200);
+//    service.setAccessTokenValiditySeconds(7200);
+    service.setAccessTokenValiditySeconds(720);
     // 刷新令牌默认有效期3天
-    service.setRefreshTokenValiditySeconds(259200);
+//    service.setRefreshTokenValiditySeconds(259200);
+    service.setRefreshTokenValiditySeconds(25920);
     // token 增强器
     TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
     tokenEnhancerChain.setTokenEnhancers(Arrays.asList(jwtAccessTokenConverter()));

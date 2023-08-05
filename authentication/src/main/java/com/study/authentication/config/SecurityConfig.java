@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,8 +32,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Autowired
   private UserServiceImpl userService;
-//  @Autowired
-//  private CustomAuthExceptionEntryPoint authExceptionEntryPoint;
 
 
   /**
@@ -80,19 +79,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http
-//        .formLogin().loginPage("/login").permitAll()
-//        .and()
         .authorizeRequests()
         .antMatchers(HttpMethod.OPTIONS) .permitAll()
         .anyRequest().authenticated()
         .and()
-        .httpBasic()
+//        .formLogin().loginPage("/login").permitAll() // 自定义登录，下面httpBasic便会失效。会由LoginUrlAuthenticationEntryPoint 直接返回浏览器无权限访问
+//        .and()
+        .httpBasic()// BasicAuthenticationEntryPoint 返回浏览器WWW-Authenticate: Basic realm ,浏览器便会自己弹出登录页面
         .and()
         .exceptionHandling()
         .and()
         .csrf().disable()
     ;
-//    http.exceptionHandling().authenticationEntryPoint(authExceptionEntryPoint);
   }
 
 

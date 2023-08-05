@@ -21,7 +21,3 @@ spring:
       username: nacos
       password: nacos
 
-  thymeleaf:
-    cache: false
-    prefix: classpath:/views/
-
