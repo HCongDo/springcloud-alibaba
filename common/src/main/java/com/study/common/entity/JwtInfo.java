@@ -37,6 +37,6 @@ public class JwtInfo {
     jsonObject.put("authorities",Arrays.toString(authorities));
     jsonObject.put("client_id",client_id);
     jsonObject.put("jti",jti);
-    return jsonObject.toString();
+    return jsonObject.toJSONString();
   }
 }

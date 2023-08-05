@@ -2,7 +2,10 @@ package com.study.stock.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.study.common.entity.JwtInfo;
+import com.study.common.entity.ResultDto;
 import com.study.common.entity.User;
+import com.study.common.entity.UserContextHolder;
 import com.study.stock.entity.Customer;
 import com.study.stock.mapper.CustomerMapper;
 import org.slf4j.Logger;
@@ -23,12 +26,14 @@ public class StockController {
 
     @RequestMapping("/reduct")
     @ResponseBody
-    public User reduct() throws Exception{
+    public ResultDto reduct() throws Exception{
+        JwtInfo context = UserContextHolder.getInstance().getContext();
+        logger.info("库存用户信息为：{}",context.toString());
         int pageNum = 1,pageSize=4;
         Page<Customer> page = new Page(pageNum, pageSize);
         QueryWrapper<Customer> queryWrapper = new QueryWrapper<Customer>();
         Page<Customer> customerPage = customerMapper.selectPage(page, queryWrapper);
-        logger.info("product 分页测试结果：{}",customerPage.getRecords().size());
-        return new User();
+        logger.info("stock 分页测试结果：{}",customerPage.getRecords().size());
+        return ResultDto.success(page);
     }
 }

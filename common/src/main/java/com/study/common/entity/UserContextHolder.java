@@ -2,17 +2,20 @@ package com.study.common.entity;
 
 /**
  *  自定义上下文用户信息
- * @Description: TODO
+ * @Description:
  * @Author hecong
  * @Date 2023/8/4 19:27
  * @Version 1.0
  */
 public class UserContextHolder {
 
-  private ThreadLocal<JwtInfo> threadLocal;
+//  private ThreadLocal<JwtInfo> threadLocal;
+  // 兼容多线程
+  private InheritableThreadLocal<JwtInfo> threadLocal;
+
 
   private UserContextHolder() {
-    this.threadLocal = new ThreadLocal();
+    this.threadLocal = new InheritableThreadLocal();
   }
 
   public static UserContextHolder getInstance() {
