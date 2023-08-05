@@ -90,6 +90,7 @@ public class JwtTokenFilter implements GlobalFilter, Ordered {
         token = accessTokens.get(0);
       }
       Claims jwt = getTokenBody(token);
+      Assert.notNull(jwt, "权限验证失败，请先登录");
       logger.info("token解密为：{}",jwt.toString());
       ServerHttpRequest oldRequest = exchange.getRequest();
       URI uri = oldRequest.getURI();
@@ -109,8 +110,9 @@ public class JwtTokenFilter implements GlobalFilter, Ordered {
       };
       return chain.filter(exchange.mutate().request(newRequest).build());
     }catch (Exception e){
+      String errMsg = e.getMessage().contains("expired")?"令牌已过期，请重新登录":"验签失败,请重新登录再试";
       logger.error("Token验签失败，具体原因为：{}",e.getMessage());
-      return returnAuthFail(exchange, "验签失败,请重新登录再试");
+      return returnAuthFail(exchange, errMsg);
     }
   }
 
@@ -129,7 +131,8 @@ public class JwtTokenFilter implements GlobalFilter, Ordered {
   }
 
   /**
-   *  jwt 解析
+   *  令牌解析
+   *  已过期令牌是直接抛异常
    * @param token
    * @return
    */
@@ -139,6 +142,7 @@ public class JwtTokenFilter implements GlobalFilter, Ordered {
         .parseClaimsJws(token)
         .getBody();
   }
+
 
   @Override
   public int getOrder() {
