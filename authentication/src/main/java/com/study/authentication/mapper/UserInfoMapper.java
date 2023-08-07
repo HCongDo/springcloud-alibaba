@@ -10,5 +10,17 @@ import com.study.authentication.entity.UserInfo;
  */
 public interface UserInfoMapper extends BaseMapper<UserInfo> {
 
+    /**
+     *  根据用户名查询用户
+     * @param username
+     * @return
+     */
     UserInfo getUserByUsername(String username);
+
+    /**
+     *  根据手机号查找用户
+     * @param phone
+     * @return
+     */
+    UserInfo getUserByUserPhone(String phone);
 }

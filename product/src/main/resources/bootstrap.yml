@@ -36,13 +36,13 @@ spring:
           group: DEFAULT_GROUP
           refresh: true
         shared-configs[2]:
-          data-id: common-logback-nacos.xml
+          data-id: common-logback-nacos.yml
           group: DEFAULT_GROUP
           refresh: true
-        shared-configs[3]:
-          data-id: common-seata.yml
-          group: DEFAULT_GROUP
-          refresh: true
+#        shared-configs[3]:
+#          data-id: common-seata.yml
+#          group: DEFAULT_GROUP
+#          refresh: true
           #拓展配置，利用加载顺序，用来覆盖其他配置。比如覆盖上面的共享配置某些配置项
       # Nacos 认证用户
       username: nacos

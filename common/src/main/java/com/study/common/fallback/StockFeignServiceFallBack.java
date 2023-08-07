@@ -1,5 +1,6 @@
 package com.study.common.fallback;
 
+import com.study.common.entity.ResultDto;
 import com.study.common.entity.User;
 import com.study.common.feign.StockFeignService;
 import org.slf4j.Logger;
@@ -11,9 +12,9 @@ public class StockFeignServiceFallBack implements StockFeignService {
 
     Logger logger =LoggerFactory.getLogger(this.getClass());
 
-    public User reduct() {
+    public ResultDto reduct() {
         logger.info(" 执行 StockFeignServiceFallBack 服务降级逻辑");
-        return new User();
+        return ResultDto.error("服务降级逻辑");
     }
 
 }

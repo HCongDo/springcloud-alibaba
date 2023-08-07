@@ -14,4 +14,7 @@ public interface ProductFeignService {
     @RequestMapping("/err")
     public ResultDto err();
 
+    @RequestMapping("/list")
+    public ResultDto list();
+
 }

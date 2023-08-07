@@ -1,5 +1,6 @@
 package com.study.common.feign;
 
+import com.study.common.entity.ResultDto;
 import com.study.common.entity.User;
 import com.study.common.fallback.StockFeignServiceFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -11,7 +12,7 @@ public interface StockFeignService {
 
     @RequestMapping("/reduct")
     @ResponseBody
-    public User reduct();
+    public ResultDto reduct();
 
 
 }

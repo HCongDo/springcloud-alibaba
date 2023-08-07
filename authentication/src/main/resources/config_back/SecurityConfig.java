@@ -2,13 +2,12 @@ package com.study.authentication.config;
 
 
 import com.study.authentication.service.UserServiceImpl;
+import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,9 +19,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * Securiry 安全配置
- *
- * @author hecong
  * @version 1.0
+ * @author hecong
  * @date 2023-08-04 17:55:23
  */
 @Configuration
@@ -33,6 +31,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Autowired
   private UserServiceImpl userService;
 
+  @Autowired
+  private DataSource dataSource;
+
+  @Autowired
+  private AuthExceptionEntryPoint authExceptionEntryPoint;
 
   /**
    * 注入用户信息服务
@@ -53,6 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    */
   @Autowired
   public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
+    //auth.jdbcAuthentication().dataSource(dataSource).passwordEncoder(passwordEncoder());
     auth
         .userDetailsService(userDetailsService())
         .passwordEncoder(passwordEncoder());
@@ -78,22 +82,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    */
   @Override
   protected void configure(HttpSecurity http) throws Exception {
-    http
-        .authorizeRequests()
-        .antMatchers(HttpMethod.OPTIONS) .permitAll()
+    http.authorizeRequests()
+        .antMatchers(HttpMethod.OPTIONS).permitAll()
+        .antMatchers("/oauth/authorize").permitAll()
         .anyRequest().authenticated()
         .and()
-//        .formLogin().loginPage("/login").permitAll() // 自定义登录，下面httpBasic便会失效。会由LoginUrlAuthenticationEntryPoint 直接返回浏览器无权限访问
-//        .and()
-        .httpBasic()// BasicAuthenticationEntryPoint 返回浏览器WWW-Authenticate: Basic realm ,浏览器便会自己弹出登录页面
+        .httpBasic()
         .and()
         .exceptionHandling()
+        .authenticationEntryPoint(authExceptionEntryPoint)
         .and()
         .csrf().disable()
     ;
   }
-
-
 
   @Bean
   public PasswordEncoder passwordEncoder() {

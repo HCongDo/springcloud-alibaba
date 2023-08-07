@@ -28,7 +28,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
   public void configure(HttpSecurity http) throws Exception {
     http
         .authorizeRequests()
-        .antMatchers("/login/qrCode").permitAll()//获取二维码
         .anyRequest()
         .authenticated()
     ;

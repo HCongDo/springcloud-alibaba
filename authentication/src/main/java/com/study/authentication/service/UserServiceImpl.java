@@ -26,11 +26,11 @@ public class UserServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserInfo userinfo = userInfoMapper.getUserByUsername(username);
         if (userinfo != null) {
-//            User user = new User(userinfo.getUsername(), userinfo.getPassword(), AuthorityUtils.createAuthorityList(userinfo.getRoles()));
-            User user = new User(userinfo.getUsername(), userinfo.getPassword(), AuthorityUtils.createAuthorityList("admin"));
+            User user = new User(userinfo.getUsername(), userinfo.getPassword(), AuthorityUtils.createAuthorityList(userinfo.getRoles()));
             return new OauthUser(userinfo, user);
         } else {
             throw new UsernameNotFoundException("用户[" + username + "]不存在");
         }
     }
+
 }

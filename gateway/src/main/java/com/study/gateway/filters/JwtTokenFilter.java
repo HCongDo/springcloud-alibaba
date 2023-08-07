@@ -1,11 +1,17 @@
 package com.study.gateway.filters;
 
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.lang.Assert;
+import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
+import com.study.common.entity.ResultDto;
 import com.study.common.utils.RSAUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -24,6 +30,7 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.List;
 
 import static com.sun.scenario.Settings.set;
 import static java.security.KeyRep.Type.SECRET;
@@ -37,104 +44,109 @@ import static org.bouncycastle.crypto.tls.SignatureAlgorithm.rsa;
  * @version 1.0
  * @date 2023/7/20 11:43
  */
-//@Component
+@Component
 public class JwtTokenFilter implements GlobalFilter, Ordered {
 
-    private String[] skipAuthUrls = {"/ljl-auth/oauth/token"};
-    //需要从url中获取token
-    private String[] urlToken = {"/ljl-server-chat/websocket"};
+  Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    /**
-     * 过滤器
-     *
-     * @param exchange
-     * @param chain
-     * @return
-     */
-    @Override
-    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        String url = exchange.getRequest().getURI().getPath();
-        System.out.println(url);
-        //跳过不需要验证的路径
-        if (null != skipAuthUrls && Arrays.asList(skipAuthUrls).contains(url)) {
-            return chain.filter(exchange);
+  /*
+   * /oauth/authorize：授权端点。
+   * /oauth/token：令牌端点。
+   * /oauth/confirm_access：用户确认授权提交端点。
+   * /oauth/error：授权服务错误信息端点。
+   * /oauth/check_token：用于资源服务访问的令牌解析端点。
+   * /oauth/token_key：提供公有密匙的端点，如果你使用JWT令牌的话。
+   */
+  private String[] skipAuthUrls = {
+      "/oauth/authorize",
+      "/oauth/token",
+      "/oauth/confirm_access",
+      "/oauth/error",
+      "/oauth/check_token",
+      "/oauth/token_key"
+  };
+
+  /**
+   * 鉴权实现
+   * 1.首先网关检查token是否有效，无效直接返回401，不调用签权服务
+   * 2.调用签权服务器看是否对该请求有权限，有权限进入下一个filter，没有权限返回401
+   * @param exchange
+   * @param chain
+   * @return
+   */
+  @Override
+  public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+    String url = exchange.getRequest().getURI().getPath();
+    logger.info("请求路径为：{}",url);
+    try {
+      // TODO 跳过不需要验证的路径
+      if (null != skipAuthUrls && Arrays.asList(skipAuthUrls).contains(url)) {
+        return chain.filter(exchange);
+      }
+      String token =  exchange.getRequest().getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
+      if(StrUtil.isBlank(token)){
+        List<String> accessTokens = exchange.getRequest().getQueryParams().get("access_token");
+        Assert.isTrue(CollUtil.isNotEmpty(accessTokens), "权限验证失败，请先登录");
+        token = accessTokens.get(0);
+      }
+      Claims jwt = getTokenBody(token);
+      Assert.notNull(jwt, "权限验证失败，请先登录");
+      logger.info("token解密为：{}",jwt.toString());
+      ServerHttpRequest oldRequest = exchange.getRequest();
+      URI uri = oldRequest.getURI();
+      ServerHttpRequest newRequest = oldRequest.mutate().uri(uri).build();
+      // TODO 定义新的消息头,子模块可自行转换
+      HttpHeaders headers = new HttpHeaders();
+      headers.putAll(exchange.getRequest().getHeaders());
+      headers.remove("Authorization");
+      headers.set("x-client-token-user", JSONObject.toJSONString(jwt));
+      newRequest = new ServerHttpRequestDecorator(newRequest) {
+        @Override
+        public HttpHeaders getHeaders() {
+          HttpHeaders httpHeaders = new HttpHeaders();
+          httpHeaders.putAll(headers);
+          return httpHeaders;
         }
-        //获取token
-        String token = exchange.getRequest().getHeaders().getFirst("Authorization");
-        if (null != urlToken && Arrays.asList(urlToken).contains(url)) {
-            //该方法需要修改
-            String tokens[] = exchange.getRequest().getURI().getQuery().split("=");
-            token = tokens[1];
-        }
-        if (StringUtils.isBlank(token)) {
-            //没有token
-            return returnAuthFail(exchange, "请登陆");
-        } else {
-            //有token
-            try {
-                //解密token
-                Claims jwt = getTokenBody(token);
-                ServerHttpRequest oldRequest = exchange.getRequest();
-                URI uri = oldRequest.getURI();
-                ServerHttpRequest newRequest = oldRequest.mutate().uri(uri).build();
-                // 定义新的消息头
-                HttpHeaders headers = new HttpHeaders();
-                headers.putAll(exchange.getRequest().getHeaders());
-                headers.remove("Authorization");
-                headers.set("Authorization", jwt.toString());
-                newRequest = new ServerHttpRequestDecorator(newRequest) {
-                    @Override
-                    public HttpHeaders getHeaders() {
-                        HttpHeaders httpHeaders = new HttpHeaders();
-                        httpHeaders.putAll(headers);
-                        return httpHeaders;
-                    }
-                };
-
-                return chain.filter(exchange.mutate().request(newRequest).build());
-                /*System.out.println(jwt.toString());
-                //RSA公钥验签
-                String jwtData[] =  token.split("\\.");
-                Boolean isSgin = RSAUtil.verify((jwtData[0]+"."+jwtData[1]).getBytes(),jwtData[2]);
-                if(isSgin){
-                    return chain.filter(exchange);
-                }else{
-                    return returnAuthFail(exchange,"token验签失败");
-                }*/
-            } catch (ExpiredJwtException e) {
-                e.printStackTrace();
-                return returnAuthFail(exchange, "token超时");
-            } catch (Exception e) {
-                e.printStackTrace();
-                return returnAuthFail(exchange, "token验签失败");
-            }
-        }
+      };
+      return chain.filter(exchange.mutate().request(newRequest).build());
+    }catch (Exception e){
+      String errMsg = e.getMessage().contains("expired")?"令牌已过期，请重新登录":"验签失败,请重新登录再试";
+      logger.error("Token验签失败，具体原因为：{}",e.getMessage());
+      return returnAuthFail(exchange, errMsg);
     }
+  }
 
-    /**
-     * 返回校验失败
-     *
-     * @param exchange
-     * @return
-     */
-    private Mono<Void> returnAuthFail(ServerWebExchange exchange, String message) {
-        ServerHttpResponse serverHttpResponse = exchange.getResponse();
-        serverHttpResponse.setStatusCode(HttpStatus.UNAUTHORIZED);
-        String resultData = "{\"status\":\"-1\",\"msg\":" + message + "}";
-        byte[] bytes = resultData.getBytes(StandardCharsets.UTF_8);
-        DataBuffer buffer = exchange.getResponse().bufferFactory().wrap(bytes);
-        return exchange.getResponse().writeWith(Flux.just(buffer));
-    }
+  /**
+   * 返回校验失败
+   *
+   * @param exchange
+   * @return
+   */
+  private Mono<Void> returnAuthFail(ServerWebExchange exchange, String message) {
+    ServerHttpResponse serverHttpResponse = exchange.getResponse();
+    serverHttpResponse.setStatusCode(HttpStatus.UNAUTHORIZED);
+    byte[] bytes = ResultDto.error(401,message).toString().getBytes(StandardCharsets.UTF_8);
+    DataBuffer buffer = exchange.getResponse().bufferFactory().wrap(bytes);
+    return exchange.getResponse().writeWith(Flux.just(buffer));
+  }
 
-    private static Claims getTokenBody(String token) {
-        return Jwts.parser()
-                .setSigningKey(RSAUtil.getPublicKey())
-                .parseClaimsJws(token)
-                .getBody();
-    }
+  /**
+   *  令牌解析
+   *  已过期令牌是直接抛异常
+   * @param token
+   * @return
+   */
+  private static Claims getTokenBody(String token) {
+    return Jwts.parser()
+        .setSigningKey(RSAUtil.getPublicKey())
+        .parseClaimsJws(token)
+        .getBody();
+  }
 
-    @Override
-    public int getOrder() {
-        return -201;
-    }
+
+  @Override
+  public int getOrder() {
+    return 100;
+  }
+
 }

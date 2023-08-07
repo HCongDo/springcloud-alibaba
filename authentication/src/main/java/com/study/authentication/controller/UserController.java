@@ -19,9 +19,6 @@ import sun.plugin.liveconnect.SecurityContextHelper;
 @RestController
 public class UserController {
 
-   @Autowired
-    private UserServiceImpl userService;
-
    @RequestMapping("/user")
    private ResultDto getUserInfo(){
        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -30,5 +27,7 @@ public class UserController {
        }
        return ResultDto.error("获取用户信息失败");
    }
+
+
 
 }

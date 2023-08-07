@@ -25,7 +25,7 @@ spring:
           group: DEFAULT_GROUP   # 默认为DEFAULT_GROUP
           refresh: true   # 是否动态刷新，默认为false
         shared-configs[1]:
-          data-id: common-logback-nacos.xml
+          data-id: common-logback-nacos.yml
           group: DEFAULT_GROUP
           refresh: true
       # Nacos 认证用户 认证密码

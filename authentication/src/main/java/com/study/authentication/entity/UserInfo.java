@@ -1,5 +1,6 @@
 package com.study.authentication.entity;
 
+import java.util.Date;
 import lombok.Data;
 import org.springframework.security.core.userdetails.User;
 
@@ -18,7 +19,8 @@ public class UserInfo implements Serializable{
     private String phone;
     private String password;
     private String username;
-    // 多个逗号隔开
+    private String smsCode;
+    private Date smsCodeCreateTime;
     private String roles;
 
 

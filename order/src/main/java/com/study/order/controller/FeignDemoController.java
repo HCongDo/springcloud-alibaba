@@ -39,11 +39,25 @@ public class FeignDemoController {
         @RequestMapping("/seata")
     @ResponseBody
     public ResultDto seata() throws Exception{
-        User reduct = stockFeignService.reduct();
+        ResultDto reduct = stockFeignService.reduct();
         System.out.println(reduct.toString());
         ResultDto info = productFeignService.seata();
         logger.info(info.getData().toString());
         return ResultDto.success();
+    }
+
+    /**
+     * 案例： 全流程查询
+     * @return
+     */
+    @RequestMapping("/all")
+    @ResponseBody
+    public ResultDto all() throws Exception{
+        ResultDto reduct = stockFeignService.reduct();
+        System.out.println(reduct.toString());
+        ResultDto info = productFeignService.list();
+        logger.info(info.getData().toString());
+        return ResultDto.success(info);
     }
 
 
