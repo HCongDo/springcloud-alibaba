@@ -6,6 +6,7 @@ import com.study.common.entity.JwtInfo;
 import com.study.common.entity.ResultDto;
 import com.study.common.entity.User;
 import com.study.common.entity.UserContextHolder;
+import com.study.common.utils.TraceIdUtil;
 import com.study.stock.entity.Customer;
 import com.study.stock.mapper.CustomerMapper;
 import org.slf4j.Logger;
@@ -27,6 +28,7 @@ public class StockController {
     @RequestMapping("/reduct")
     @ResponseBody
     public ResultDto reduct() throws Exception{
+        logger.info("traceId:{}", TraceIdUtil.getTraceId());
         JwtInfo context = UserContextHolder.getInstance().getContext();
         logger.info("库存用户信息为：{}",context.toString());
         int pageNum = 1,pageSize=4;

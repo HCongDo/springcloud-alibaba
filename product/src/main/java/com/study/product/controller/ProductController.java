@@ -5,11 +5,13 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.study.common.entity.JwtInfo;
 import com.study.common.entity.ResultDto;
 import com.study.common.entity.UserContextHolder;
+import com.study.common.utils.TraceIdUtil;
 import com.study.product.entity.Customer;
 import com.study.product.mapper.CustomerMapper;
 import io.seata.core.context.RootContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,6 +54,7 @@ public class ProductController {
 
     @RequestMapping("/list")
     public ResultDto list()  {
+        logger.info("traceId:{}", TraceIdUtil.getTraceId());
         JwtInfo context = UserContextHolder.getInstance().getContext();
         logger.info("产品用户信息为：{}",context.toString());
         int pageNum = 1,pageSize=4;

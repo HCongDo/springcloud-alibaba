@@ -5,6 +5,7 @@ import com.study.common.entity.User;
 import com.study.common.feign.ProductFeignService;
 import com.study.common.feign.SeaFeignService;
 import com.study.common.feign.StockFeignService;
+import com.study.common.utils.TraceIdUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,8 @@ public class FeignDemoController {
      */
     @RequestMapping("/all")
     @ResponseBody
-    public ResultDto all() throws Exception{
+    public ResultDto all(){
+        logger.info("traceId:{}", TraceIdUtil.getTraceId());
         ResultDto reduct = stockFeignService.reduct();
         System.out.println(reduct.toString());
         ResultDto info = productFeignService.list();

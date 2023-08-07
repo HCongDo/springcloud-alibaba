@@ -16,7 +16,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 @EnableAuthorizationServer
 @EnableResourceServer
 @EnableWebSecurity
-@MapperScan("com.study.authentication.mapper")
+@MapperScan("com.study.authentication.aouth.mapper")
 public class AuthenticationApplication {
 
     public static void main(String[] args) {

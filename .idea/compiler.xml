@@ -14,6 +14,7 @@
         <module name="stock" />
         <module name="gateway" />
         <module name="order" />
+        <module name="authentication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

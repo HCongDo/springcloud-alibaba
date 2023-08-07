@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.study.common.entity.JwtInfo;
 import com.study.common.entity.ResultDto;
 import com.study.common.entity.UserContextHolder;
+import com.study.common.utils.TraceIdUtil;
 import com.study.order.entity.Customer;
 import com.study.order.entity.Person;
 import com.study.order.mapper.CustomerMapper;
@@ -62,6 +63,7 @@ public class GatewayDemoController {
   @RequestMapping("/list")
   @ResponseBody
   public ResultDto list() throws Exception {
+    logger.info("traceId:{}", TraceIdUtil.getTraceId());
     JwtInfo context = UserContextHolder.getInstance().getContext();
     logger.info("当前用户信息为：{}", context.toString());
     List<Person> persons = personMapper.selectPersonList();

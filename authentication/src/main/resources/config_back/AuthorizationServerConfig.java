@@ -2,7 +2,7 @@ package com.study.authentication.config;
 
 import com.study.authentication.exception.OAuthServerWebResponseExceptionTranslator;
 import com.study.authentication.granter.SmsCodeTokenGranter;
-import com.study.authentication.mapper.UserInfoMapper;
+import com.study.authentication.aouth.mapper.UserInfoMapper;
 import com.study.authentication.utils.MyJwtAccessTokenConverter;
 import com.study.common.utils.RSAUtil;
 import java.util.ArrayList;

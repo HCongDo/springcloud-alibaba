@@ -1,7 +1,7 @@
 package com.study.authentication.config;
 
 
-import com.study.authentication.service.UserServiceImpl;
+import com.study.authentication.aouth.service.UserServiceImpl;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

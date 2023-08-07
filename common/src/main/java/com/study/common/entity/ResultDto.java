@@ -2,6 +2,9 @@ package com.study.common.entity;
 
 import com.alibaba.fastjson.JSONObject;
 import java.io.Serializable;
+import java.net.InetAddress;
+
+import com.study.common.utils.CommonUtil;
 import lombok.Data;
 
 @Data
@@ -15,6 +18,12 @@ public class ResultDto<T> implements Serializable {
     private String msg;
     //业务数据
     private T data;
+    //信息来源IP
+    private String hostIp;
+    //实例名称
+    private String instanceName;
+    //日志ID
+    private String logId;
 
 
     public ResultDto(String applicationName,Integer status, String msg, T data) {
@@ -22,6 +31,10 @@ public class ResultDto<T> implements Serializable {
         this.msg = msg;
         this.data = data;
         this.applicationName = applicationName;
+        this.hostIp = CommonUtil.getHostIp();
+        this.hostIp = CommonUtil.getHostIp();
+        this.instanceName = CommonUtil.getInstanceName();
+
     }
 
 
@@ -29,11 +42,15 @@ public class ResultDto<T> implements Serializable {
         this.status = status;
         this.msg = msg;
         this.data = data;
+        this.hostIp = CommonUtil.getHostIp();
+        this.instanceName = CommonUtil.getInstanceName();
     }
 
     public ResultDto(Integer status, String msg) {
         this.status = status;
         this.msg = msg;
+        this.hostIp = CommonUtil.getHostIp();
+        this.instanceName = CommonUtil.getInstanceName();
     }
 
     public ResultDto() {}
@@ -75,6 +92,10 @@ public class ResultDto<T> implements Serializable {
         jsonObject.put("status",status);
         jsonObject.put("msg",msg);
         jsonObject.put("data",data);
+        jsonObject.put("hostIp",hostIp);
+        jsonObject.put("instanceName",instanceName);
+        jsonObject.put("logId",logId);
         return jsonObject.toString();
     }
+
 }

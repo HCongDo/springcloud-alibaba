@@ -1,6 +1,6 @@
 package com.study.authentication.utils;
 
-import com.study.authentication.service.OauthUser;
+import com.study.authentication.aouth.service.OauthUser;
 import java.util.HashMap;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;

@@ -5,7 +5,7 @@
 <mapper namespace="com.study.authentication.mapper.UserInfoMapper">
 
     <!--用户名登录验证-->
-    <select id="getUserByUsername" resultType="com.study.authentication.entity.UserInfo">
+    <select id="getUserByUsername" resultType="com.study.authentication.aouth.entity.UserInfo">
         SELECT *,
         (
         select GROUP_CONCAT(DISTINCT  r.name SEPARATOR ',') from tb_role r
@@ -20,7 +20,7 @@
     </select>
 
     <!--手机验证码登录验证-->
-    <select id="getUserByUserPhone" resultType="com.study.authentication.entity.UserInfo">
+    <select id="getUserByUserPhone" resultType="com.study.authentication.aouth.entity.UserInfo">
         SELECT *,
         (
         select GROUP_CONCAT(DISTINCT  r.name SEPARATOR ',') from tb_role r
