@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.study.authentication.mapper.UserInfoMapper">
+<mapper namespace="com.study.authentication.aouth.mapper.UserInfoMapper">
 
     <!--用户名登录验证-->
     <select id="getUserByUsername" resultType="com.study.authentication.aouth.entity.UserInfo">

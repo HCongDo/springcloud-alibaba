@@ -1,0 +1,483 @@
+2023-08-08 22:53:37.230 -  ERROR --- [           main] o.springframework.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@94:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@103:116 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.authentication.AuthenticationApplication.main(AuthenticationApplication.java:23)
+2023-08-08 22:53:37.234 -  ERROR --- [           main] o.springframework.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@94:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@103:116 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.authentication.AuthenticationApplication.main(AuthenticationApplication.java:23)
+2023-08-08 23:25:20.673 -  ERROR --- [           main] o.springframework.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@96:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@105:116 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.authentication.AuthenticationApplication.main(AuthenticationApplication.java:23)
+2023-08-08 23:25:20.676 -  ERROR --- [           main] o.springframework.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@96:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@105:116 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.authentication.AuthenticationApplication.main(AuthenticationApplication.java:23)
+2023-08-08 23:26:04.826 -  ERROR --- [           main] o.springframework.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@96:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@105:116 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.authentication.AuthenticationApplication.main(AuthenticationApplication.java:23)
+2023-08-08 23:26:04.829 -  ERROR --- [           main] o.springframework.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@96:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@105:116 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.authentication.AuthenticationApplication.main(AuthenticationApplication.java:23)
+2023-08-08 23:28:21.349 -  ERROR --- [           main] o.springframework.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@96:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@105:116 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.authentication.AuthenticationApplication.main(AuthenticationApplication.java:23)
+2023-08-08 23:28:21.352 -  ERROR --- [           main] o.springframework.boot.SpringApplication : Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.NestedComplexPropertyIA - Could not create component [layout] of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout] java.lang.ClassNotFoundException: org.apache.skywalking.apm.toolkit.log.logback.v1.x.TraceIdPatternLogbackLayout
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@96:26 - no applicable action for [Pattern], current ElementPath  is [[configuration][appender][encoder][layout][Pattern]]
+ERROR in ch.qos.logback.core.joran.action.AppenderAction - Could not create an Appender of type [org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender]. ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@105:116 - ActionException in Action for tag [appender] ch.qos.logback.core.joran.spi.ActionException: ch.qos.logback.core.util.DynamicClassLoadingException: Failed to instantiate type org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [grpc-log]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.bootstrapServiceContext(BootstrapApplicationListener.java:212)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:117)
+	at org.springframework.cloud.bootstrap.BootstrapApplicationListener.onApplicationEvent(BootstrapApplicationListener.java:74)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.authentication.AuthenticationApplication.main(AuthenticationApplication.java:23)
+2023-08-08 23:28:41.625 -  WARN  --- [kground-preinit] o.s.h.c.json.Jackson2ObjectMapperBuilder : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2023-08-08 23:28:41.814 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 23:28:41.814 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 23:28:44.121 -  WARN  --- [           main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[oauth-service.yml] & group[DEFAULT_GROUP]
+2023-08-08 23:28:44.122 -  INFO  --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-oauth-service.yml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-oauth-service,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-common-logback-nacos.yml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-common-mysql.yml,DEFAULT_GROUP'}]
+2023-08-08 23:28:44.140 -  INFO  --- [           main] c.s.a.AuthenticationApplication          : No active profile set, falling back to default profiles: default
+2023-08-08 23:28:44.822 -  WARN  --- [           main] o.s.boot.actuate.endpoint.EndpointId     : Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2023-08-08 23:28:44.933 -  INFO  --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b7a3abaa-6409-3898-bb99-b69edc1015d9
+2023-08-08 23:28:45.025 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@25ae1f80' of type [org.springframework.security.oauth2.provider.expression.OAuth2MethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 23:28:45.027 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 23:28:45.214 -  INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7090 (http)
+2023-08-08 23:28:45.221 -  INFO  --- [           main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2023-08-08 23:28:45.222 -  INFO  --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2023-08-08 23:28:45.333 -  INFO  --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-08-08 23:28:45.333 -  INFO  --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1175 ms
+2023-08-08 23:28:46.640 -  DEBUG --- [           main] s.c.a.w.c.WebSecurityConfigurerAdapter$2 : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2023-08-08 23:28:46.764 -  DEBUG --- [           main] .s.o.p.e.FrameworkEndpointHandlerMapping : 8 mappings in 'oauth2EndpointHandlerMapping'
+2023-08-08 23:28:46.776 -  DEBUG --- [           main] eGlobalAuthenticationAutowiredConfigurer : Eagerly initializing {authenticationApplication=com.study.authentication.AuthenticationApplication$$EnhancerBySpringCGLIB$$10219657@6651efa4, securityConfig=com.study.authentication.config.SecurityConfig$$EnhancerBySpringCGLIB$$27a56c6d@1ac25dbb}
+2023-08-08 23:28:46.829 -  DEBUG --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'fullyAuthenticated', for Ant [pattern='/oauth/token']
+2023-08-08 23:28:46.831 -  DEBUG --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll()', for Ant [pattern='/oauth/token_key']
+2023-08-08 23:28:46.831 -  DEBUG --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll()', for Ant [pattern='/oauth/check_token']
+2023-08-08 23:28:46.834 -  DEBUG --- [           main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2023-08-08 23:28:46.834 -  DEBUG --- [           main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2023-08-08 23:28:46.838 -  INFO  --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@df432ec, org.springframework.security.web.context.SecurityContextPersistenceFilter@44864ebe, org.springframework.security.web.header.HeaderWriterFilter@378c48c1, org.springframework.security.web.authentication.logout.LogoutFilter@27210a3b, org.springframework.security.oauth2.provider.client.ClientCredentialsTokenEndpointFilter@7aa63f50, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5972e3a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@408f70ab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35d0749, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6144e499, org.springframework.security.web.session.SessionManagementFilter@5ca86715, org.springframework.security.web.access.ExceptionTranslationFilter@4d16975b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2b3242a5]
+2023-08-08 23:28:46.845 -  DEBUG --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/login/qrCode']
+2023-08-08 23:28:46.846 -  DEBUG --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'authenticated', for any request
+2023-08-08 23:28:46.846 -  DEBUG --- [           main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2023-08-08 23:28:46.846 -  DEBUG --- [           main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2023-08-08 23:28:46.846 -  INFO  --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfiguration$NotOAuthRequestMatcher@74e2cfc5, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a5d5b38, org.springframework.security.web.context.SecurityContextPersistenceFilter@25c6ab3f, org.springframework.security.web.header.HeaderWriterFilter@b3a8455, org.springframework.security.web.authentication.logout.LogoutFilter@70e1aa20, org.springframework.security.oauth2.provider.authentication.OAuth2AuthenticationProcessingFilter@49f6c25e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b80af04, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2447940d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a47f0be, org.springframework.security.web.session.SessionManagementFilter@5c930fc3, org.springframework.security.web.access.ExceptionTranslationFilter@1818d00b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@61d6c8c4]
+2023-08-08 23:28:46.847 -  DEBUG --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'permitAll', for Ant [pattern='/**', OPTIONS]
+2023-08-08 23:28:46.847 -  DEBUG --- [           main] edFilterInvocationSecurityMetadataSource : Adding web access control expression 'authenticated', for any request
+2023-08-08 23:28:46.848 -  DEBUG --- [           main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2023-08-08 23:28:46.848 -  DEBUG --- [           main] o.s.s.w.a.i.FilterSecurityInterceptor    : Validated configuration attributes
+2023-08-08 23:28:46.848 -  INFO  --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@511d568f, org.springframework.security.web.context.SecurityContextPersistenceFilter@18f8ebd4, org.springframework.security.web.header.HeaderWriterFilter@4040ccae, org.springframework.security.web.authentication.logout.LogoutFilter@2e013ba1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@625db0e0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e1fb22c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38fc34fd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1805ca5c, org.springframework.security.web.session.SessionManagementFilter@15bb8ed5, org.springframework.security.web.access.ExceptionTranslationFilter@3dcbbbc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@29a1ec65]
+2023-08-08 23:28:46.856 -  DEBUG --- [           main] o.s.s.a.i.a.MethodSecurityInterceptor    : Validated configuration attributes
+2023-08-08 23:28:46.873 -  WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-08 23:28:46.873 -  INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-08 23:28:46.876 -  WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-08 23:28:46.876 -  INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-08 23:28:46.979 -  INFO  --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-08-08 23:28:47.091 -  WARN  --- [           main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2023-08-08 23:28:47.515 -  INFO  --- [           main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-08 23:28:48.156 -  WARN  --- [           main] s.o.SpringCloudSecurityAutoConfiguration : All Spring Cloud Security modules and starters are deprecated. They will be moved to individual projects in the next major release.
+2023-08-08 23:28:48.159 -  INFO  --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-08-08 23:28:48.227 -  INFO  --- [           main] com.alibaba.nacos.client.naming          : initializer namespace from System Property : null
+2023-08-08 23:28:48.227 -  INFO  --- [           main] com.alibaba.nacos.client.naming          : initializer namespace from System Environment :null
+2023-08-08 23:28:48.227 -  INFO  --- [           main] com.alibaba.nacos.client.naming          : initializer namespace from System Property :null
+2023-08-08 23:28:48.233 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 23:28:48.233 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 23:28:48.353 -  INFO  --- [           main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of fc09b1e5-1b21-4340-87f3-b0869b47ca81
+2023-08-08 23:28:48.354 -  INFO  --- [           main] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] RpcClient init label, labels = {module=naming, source=sdk}
+2023-08-08 23:28:48.357 -  INFO  --- [           main] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+2023-08-08 23:28:48.357 -  INFO  --- [           main] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+2023-08-08 23:28:48.358 -  INFO  --- [           main] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+2023-08-08 23:28:48.358 -  INFO  --- [           main] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] Try to connect to server on start up, server: {serverIp = '139.199.175.93', server main port = 8848}
+2023-08-08 23:28:48.537 -  INFO  --- [           main] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] Success to connect to server [139.199.175.93:8848] on start up, connectionId = 1691508529005_222.240.122.32_10589
+2023-08-08 23:28:48.537 -  INFO  --- [           main] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+2023-08-08 23:28:48.537 -  INFO  --- [t.remote.worker] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] Notify connected event to listeners.
+2023-08-08 23:28:48.537 -  INFO  --- [           main] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$274/1572255813
+2023-08-08 23:28:48.538 -  INFO  --- [t.remote.worker] com.alibaba.nacos.client.naming          : Grpc connection connect
+2023-08-08 23:28:48.541 -  INFO  --- [           main] com.alibaba.nacos.client.naming          : [SUBSCRIBE-SERVICE] service:oauth-service, group:DEFAULT_GROUP, clusters:DEFAULT 
+2023-08-08 23:28:48.572 -  INFO  --- [           main] com.alibaba.nacos.client.naming          : init new ips(0) service: DEFAULT_GROUP@@oauth-service@@DEFAULT -> []
+2023-08-08 23:28:48.579 -  INFO  --- [           main] com.alibaba.nacos.client.naming          : current ips:(0) service: DEFAULT_GROUP@@oauth-service@@DEFAULT -> []
+2023-08-08 23:28:48.592 -  INFO  --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7090 (http) with context path ''
+2023-08-08 23:28:48.594 -  INFO  --- [           main] com.alibaba.nacos.client.naming          : [REGISTER-SERVICE] public registering service oauth-service with instance Instance{instanceId='null', ip='192.168.2.8', port=7090, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
+2023-08-08 23:28:48.618 -  INFO  --- [           main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP oauth-service 192.168.2.8:7090 register finished
+2023-08-08 23:28:49.014 -  INFO  --- [           main] c.s.a.AuthenticationApplication          : Started AuthenticationApplication in 8.261 seconds (JVM running for 9.124)
+2023-08-08 23:28:49.020 -  INFO  --- [           main] c.a.nacos.client.config.impl.CacheData   : nacos.cache.data.init.snapshot = true 
+2023-08-08 23:28:49.020 -  INFO  --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-139.199.175.93_8848] [subscribe] common-mysql.yml+DEFAULT_GROUP
+2023-08-08 23:28:49.021 -  INFO  --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-139.199.175.93_8848] [add-listener] ok, tenant=, dataId=common-mysql.yml, group=DEFAULT_GROUP, cnt=1
+2023-08-08 23:28:49.022 -  INFO  --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-139.199.175.93_8848] [subscribe] oauth-service+DEFAULT_GROUP
+2023-08-08 23:28:49.022 -  INFO  --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-139.199.175.93_8848] [add-listener] ok, tenant=, dataId=oauth-service, group=DEFAULT_GROUP, cnt=1
+2023-08-08 23:28:49.022 -  INFO  --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-139.199.175.93_8848] [subscribe] oauth-service.yml+DEFAULT_GROUP
+2023-08-08 23:28:49.022 -  INFO  --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-139.199.175.93_8848] [add-listener] ok, tenant=, dataId=oauth-service.yml, group=DEFAULT_GROUP, cnt=1
+2023-08-08 23:28:49.023 -  INFO  --- [           main] c.a.n.client.config.impl.ClientWorker    : [fixed-139.199.175.93_8848] [subscribe] common-logback-nacos.yml+DEFAULT_GROUP
+2023-08-08 23:28:49.023 -  INFO  --- [           main] c.a.nacos.client.config.impl.CacheData   : [fixed-139.199.175.93_8848] [add-listener] ok, tenant=, dataId=common-logback-nacos.yml, group=DEFAULT_GROUP, cnt=1
+2023-08-08 23:28:49.143 -  INFO  --- [39.199.175.93-7] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] Receive server push request, request = NotifySubscriberRequest, requestId = 1347
+2023-08-08 23:28:49.146 -  INFO  --- [39.199.175.93-7] com.alibaba.nacos.client.naming          : init new ips(1) service: DEFAULT_GROUP@@oauth-service -> [{"ip":"192.168.2.8","port":7090,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@oauth-service","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+2023-08-08 23:28:49.147 -  INFO  --- [39.199.175.93-7] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@oauth-service -> [{"ip":"192.168.2.8","port":7090,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@oauth-service","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+2023-08-08 23:28:49.147 -  INFO  --- [39.199.175.93-7] com.alibaba.nacos.common.remote.client   : [fc09b1e5-1b21-4340-87f3-b0869b47ca81] Ack server push request, request = NotifySubscriberRequest, requestId = 1347
+2023-08-08 23:28:49.568 -  INFO  --- [aming.updater.0] com.alibaba.nacos.client.naming          : new ips(1) service: DEFAULT_GROUP@@oauth-service@@DEFAULT -> [{"ip":"192.168.2.8","port":7090,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@oauth-service","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+2023-08-08 23:28:49.568 -  INFO  --- [aming.updater.0] com.alibaba.nacos.client.naming          : current ips:(1) service: DEFAULT_GROUP@@oauth-service@@DEFAULT -> [{"ip":"192.168.2.8","port":7090,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@oauth-service","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+2023-08-08 23:28:49.572 -  INFO  --- [(2)-192.168.2.8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-08-08 23:28:49.572 -  INFO  --- [(2)-192.168.2.8] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-08-08 23:28:49.574 -  INFO  --- [(1)-192.168.2.8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-08-08 23:28:49.578 -  INFO  --- [(2)-192.168.2.8] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2023-08-08 23:28:50.483 -  INFO  --- [(1)-192.168.2.8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-08-08 23:29:03.310 -  DEBUG --- [nio-7090-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/oauth/token']
+2023-08-08 23:29:03.310 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/oauth/token'; against '/oauth/token'
+2023-08-08 23:29:03.310 -  DEBUG --- [nio-7090-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : matched
+2023-08-08 23:29:03.310 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 1 of 12 in additional filter chain; firing Filter: 'WebAsyncManagerIntegrationFilter'
+2023-08-08 23:29:03.311 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 2 of 12 in additional filter chain; firing Filter: 'SecurityContextPersistenceFilter'
+2023-08-08 23:29:03.311 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 3 of 12 in additional filter chain; firing Filter: 'HeaderWriterFilter'
+2023-08-08 23:29:03.312 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 4 of 12 in additional filter chain; firing Filter: 'LogoutFilter'
+2023-08-08 23:29:03.312 -  DEBUG --- [nio-7090-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', GET]
+2023-08-08 23:29:03.312 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/oauth/token'; against '/logout'
+2023-08-08 23:29:03.312 -  DEBUG --- [nio-7090-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', POST]
+2023-08-08 23:29:03.312 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /oauth/token' doesn't match 'POST /logout'
+2023-08-08 23:29:03.313 -  DEBUG --- [nio-7090-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', PUT]
+2023-08-08 23:29:03.313 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /oauth/token' doesn't match 'PUT /logout'
+2023-08-08 23:29:03.313 -  DEBUG --- [nio-7090-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : Trying to match using Ant [pattern='/logout', DELETE]
+2023-08-08 23:29:03.313 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Request 'GET /oauth/token' doesn't match 'DELETE /logout'
+2023-08-08 23:29:03.313 -  DEBUG --- [nio-7090-exec-2] o.s.s.web.util.matcher.OrRequestMatcher  : No matches found
+2023-08-08 23:29:03.313 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 5 of 12 in additional filter chain; firing Filter: 'ClientCredentialsTokenEndpointFilter'
+2023-08-08 23:29:03.313 -  DEBUG --- [nio-7090-exec-2] p.c.ClientCredentialsTokenEndpointFilter : Request is to process authentication
+2023-08-08 23:29:03.313 -  DEBUG --- [nio-7090-exec-2] o.s.s.authentication.ProviderManager     : Authentication attempt using org.springframework.security.authentication.dao.DaoAuthenticationProvider
+2023-08-08 23:29:03.447 -  DEBUG --- [nio-7090-exec-2] o.springframework.jdbc.core.JdbcTemplate : Executing prepared SQL query
+2023-08-08 23:29:03.448 -  DEBUG --- [nio-7090-exec-2] o.springframework.jdbc.core.JdbcTemplate : Executing prepared SQL statement [select client_id, client_secret, resource_ids, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove from oauth_client_details where client_id = ?]
+2023-08-08 23:29:03.484 -  TRACE --- [nio-7090-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [order-service], value class [java.lang.String], SQL type unknown
+2023-08-08 23:29:03.618 -  DEBUG --- [nio-7090-exec-2] p.c.ClientCredentialsTokenEndpointFilter : Authentication success. Updating SecurityContextHolder to contain: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@d8237bbc: Principal: org.springframework.security.core.userdetails.User@218d0336: Username: order-service; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: order; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: order
+2023-08-08 23:29:03.619 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 6 of 12 in additional filter chain; firing Filter: 'BasicAuthenticationFilter'
+2023-08-08 23:29:03.619 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 7 of 12 in additional filter chain; firing Filter: 'RequestCacheAwareFilter'
+2023-08-08 23:29:03.619 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.s.HttpSessionRequestCache        : saved request doesn't match
+2023-08-08 23:29:03.619 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 8 of 12 in additional filter chain; firing Filter: 'SecurityContextHolderAwareRequestFilter'
+2023-08-08 23:29:03.620 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 9 of 12 in additional filter chain; firing Filter: 'AnonymousAuthenticationFilter'
+2023-08-08 23:29:03.620 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : SecurityContextHolder not populated with anonymous token, as it already contained: 'org.springframework.security.authentication.UsernamePasswordAuthenticationToken@d8237bbc: Principal: org.springframework.security.core.userdetails.User@218d0336: Username: order-service; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: order; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: order'
+2023-08-08 23:29:03.620 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 10 of 12 in additional filter chain; firing Filter: 'SessionManagementFilter'
+2023-08-08 23:29:03.620 -  DEBUG --- [nio-7090-exec-2] s.CompositeSessionAuthenticationStrategy : Delegating to org.springframework.security.web.authentication.session.ChangeSessionIdAuthenticationStrategy@11c25846
+2023-08-08 23:29:03.620 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 11 of 12 in additional filter chain; firing Filter: 'ExceptionTranslationFilter'
+2023-08-08 23:29:03.620 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials at position 12 of 12 in additional filter chain; firing Filter: 'FilterSecurityInterceptor'
+2023-08-08 23:29:03.621 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.u.matcher.AntPathRequestMatcher  : Checking match of request : '/oauth/token'; against '/oauth/token'
+2023-08-08 23:29:03.621 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Secure object: FilterInvocation: URL: /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials; Attributes: [fullyAuthenticated]
+2023-08-08 23:29:03.621 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Previously Authenticated: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@d8237bbc: Principal: org.springframework.security.core.userdetails.User@218d0336: Username: order-service; Password: [PROTECTED]; Enabled: true; AccountNonExpired: true; credentialsNonExpired: true; AccountNonLocked: true; Granted Authorities: order; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: order
+2023-08-08 23:29:03.624 -  DEBUG --- [nio-7090-exec-2] o.s.s.access.vote.AffirmativeBased       : Voter: org.springframework.security.web.access.expression.WebExpressionVoter@6ee97146, returned: 1
+2023-08-08 23:29:03.624 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : Authorization successful
+2023-08-08 23:29:03.625 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.a.i.FilterSecurityInterceptor    : RunAsManager did not change Authentication object
+2023-08-08 23:29:03.625 -  DEBUG --- [nio-7090-exec-2] o.s.security.web.FilterChainProxy        : /oauth/token?client_id=order-service&client_secret=order-secret&grant_type=client_credentials reached end of additional filter chain; proceeding with original chain
+2023-08-08 23:29:03.629 -  DEBUG --- [nio-7090-exec-2] .s.o.p.e.FrameworkEndpointHandlerMapping : Mapped to org.springframework.security.oauth2.provider.endpoint.TokenEndpoint#getAccessToken(Principal, Map)
+2023-08-08 23:29:03.637 -  DEBUG --- [nio-7090-exec-2] o.springframework.jdbc.core.JdbcTemplate : Executing prepared SQL query
+2023-08-08 23:29:03.637 -  DEBUG --- [nio-7090-exec-2] o.springframework.jdbc.core.JdbcTemplate : Executing prepared SQL statement [select client_id, client_secret, resource_ids, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove from oauth_client_details where client_id = ?]
+2023-08-08 23:29:03.637 -  TRACE --- [nio-7090-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [order-service], value class [java.lang.String], SQL type unknown
+2023-08-08 23:29:03.687 -  DEBUG --- [nio-7090-exec-2] o.springframework.jdbc.core.JdbcTemplate : Executing prepared SQL query
+2023-08-08 23:29:03.687 -  DEBUG --- [nio-7090-exec-2] o.springframework.jdbc.core.JdbcTemplate : Executing prepared SQL statement [select client_id, client_secret, resource_ids, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove from oauth_client_details where client_id = ?]
+2023-08-08 23:29:03.687 -  TRACE --- [nio-7090-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [order-service], value class [java.lang.String], SQL type unknown
+2023-08-08 23:29:03.741 -  DEBUG --- [nio-7090-exec-2] o.springframework.jdbc.core.JdbcTemplate : Executing prepared SQL query
+2023-08-08 23:29:03.741 -  DEBUG --- [nio-7090-exec-2] o.springframework.jdbc.core.JdbcTemplate : Executing prepared SQL statement [select client_id, client_secret, resource_ids, scope, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove from oauth_client_details where client_id = ?]
+2023-08-08 23:29:03.741 -  TRACE --- [nio-7090-exec-2] o.s.jdbc.core.StatementCreatorUtils      : Setting SQL statement parameter value: column index 1, parameter value [order-service], value class [java.lang.String], SQL type unknown
+2023-08-08 23:29:03.792 -  DEBUG --- [nio-7090-exec-2] .s.s.o.p.c.ClientCredentialsTokenGranter : Getting access token for: order-service
+2023-08-08 23:29:03.918 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match the requestMatcher org.springframework.security.web.header.writers.HstsHeaderWriter$SecureRequestMatcher@2a2d9930
+2023-08-08 23:29:03.921 -  DEBUG --- [nio-7090-exec-2] o.s.s.w.a.ExceptionTranslationFilter     : Chain processed normally
+2023-08-08 23:29:03.921 -  DEBUG --- [nio-7090-exec-2] s.s.w.c.SecurityContextPersistenceFilter : SecurityContextHolder now cleared, as request processing completed
+2023-08-08 23:30:27.945 -  WARN  --- [      Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2023-08-08 23:30:27.945 -  WARN  --- [       Thread-3] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2023-08-08 23:30:27.945 -  WARN  --- [      Thread-10] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2023-08-08 23:30:27.945 -  WARN  --- [       Thread-3] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2023-08-08 23:30:28.152 -  INFO  --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-08 23:30:28.176 -  INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2023-08-08 23:30:28.176 -  INFO  --- [extShutdownHook] com.alibaba.nacos.client.naming          : [DEREGISTER-SERVICE] public deregistering service oauth-service with instance: Instance{instanceId='null', ip='192.168.2.8', port=7090, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+2023-08-08 23:30:28.197 -  INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2023-08-08 23:30:28.197 -  INFO  --- [extShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+2023-08-08 23:30:28.197 -  INFO  --- [extShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+2023-08-08 23:30:28.198 -  INFO  --- [extShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+2023-08-08 23:30:28.198 -  INFO  --- [extShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+2023-08-08 23:30:28.198 -  INFO  --- [extShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+2023-08-08 23:30:28.198 -  INFO  --- [extShutdownHook] com.alibaba.nacos.client.naming          : com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin

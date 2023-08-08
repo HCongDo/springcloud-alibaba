@@ -1,0 +1,380 @@
+2023-08-07 22:50:28.226 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:50:28.257 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:50:39.023 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:50:39.023 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:50:48.234 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:50:48.266 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:50:58.231 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:50:58.263 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:02.388 - bf48faa1-f5c5-4b18-98b4-da85bb6cffc3 ERROR --- [nio-8010-exec-2] c.study.exception.GlobalExceptionHandler : 程序异常, 详细信息为:com.netflix.client.ClientException: Load balancer does not have available server for client: product-service
+java.lang.RuntimeException: com.netflix.client.ClientException: Load balancer does not have available server for client: product-service
+	at org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient.execute(LoadBalancerFeignClient.java:91)
+	at com.alibaba.cloud.seata.feign.SeataLoadBalancerFeignClient.execute(SeataLoadBalancerFeignClient.java:45)
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:119)
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89)
+	at com.alibaba.cloud.sentinel.feign.SentinelInvocationHandler.invoke(SentinelInvocationHandler.java:107)
+	at com.sun.proxy.$Proxy97.list(Unknown Source)
+	at com.study.order.controller.FeignDemoController.all(FeignDemoController.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.study.common.filter.Log4jMDCFilter.doFilterInternal(Log4jMDCFilter.java:41)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.study.filter.TokenAuthenticationFilter.doFilterInternal(TokenAuthenticationFilter.java:37)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: product-service
+	at com.netflix.loadbalancer.LoadBalancerContext.getServerFromLoadBalancer(LoadBalancerContext.java:483)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:184)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94)
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:42)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.subscribe(Observable.java:10423)
+	at rx.Observable.subscribe(Observable.java:10390)
+	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443)
+	at rx.observables.BlockingObservable.single(BlockingObservable.java:340)
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112)
+	at org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient.execute(LoadBalancerFeignClient.java:84)
+	... 64 common frames omitted
+2023-08-07 22:51:08.234 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:08.265 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:18.221 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:18.253 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:28.223 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:28.253 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:38.228 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:38.266 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:48.223 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:48.254 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:58.224 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:51:58.255 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:08.226 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:08.257 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:18.224 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:18.255 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:28.234 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:28.265 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:38.225 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:38.263 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:48.234 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:48.265 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:58.235 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:52:58.251 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:53:08.223 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:53:08.254 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:53:18.228 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 22:53:18.259 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:05:12.092 -  ERROR --- [           main] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:05:13.955 -  ERROR --- [           main] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:12.089 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:12.120 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:22.096 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:22.128 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:32.086 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:32.118 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:42.086 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:42.118 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:52.088 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:06:52.120 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:02.093 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:02.124 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:12.092 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:12.123 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:22.087 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:22.119 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:32.087 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:32.119 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:42.093 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:42.131 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:52.084 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:07:52.115 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:02.085 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:02.116 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:12.098 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:12.129 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:22.093 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:22.125 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:32.097 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:32.129 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:42.094 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:42.131 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:52.084 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:08:52.116 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:09:02.093 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:09:02.125 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:09:12.093 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:09:12.125 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:09:22.086 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:09:22.118 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:09:33.261 -  ERROR --- [           main] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:09:34.985 -  ERROR --- [           main] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:10:33.253 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:10:33.285 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:10:43.256 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:10:43.288 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:10:53.254 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:10:53.285 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:03.254 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:03.285 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:13.245 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:13.277 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:23.248 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:23.283 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:33.257 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:33.289 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:43.250 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:43.282 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:53.244 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:11:53.275 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:03.255 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:03.287 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:13.244 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:13.276 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:23.260 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:23.276 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:33.244 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:33.275 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:54.847 -  ERROR --- [           main] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:12:57.283 -  ERROR --- [           main] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:13:44.783 - 65ba2b7f-7af9-4051-bf52-d7301eb20147 ERROR --- [nio-8010-exec-1] c.study.exception.GlobalExceptionHandler : 程序异常, 详细信息为:Read timed out executing GET http://product-service/product/list
+feign.RetryableException: Read timed out executing GET http://product-service/product/list
+	at feign.FeignException.errorExecuting(FeignException.java:249)
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:129)
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:89)
+	at com.alibaba.cloud.sentinel.feign.SentinelInvocationHandler.invoke(SentinelInvocationHandler.java:107)
+	at com.sun.proxy.$Proxy97.list(Unknown Source)
+	at com.study.order.controller.FeignDemoController.all(FeignDemoController.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.study.common.filter.Log4jMDCFilter.doFilterInternal(Log4jMDCFilter.java:41)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.study.filter.TokenAuthenticationFilter.doFilterInternal(TokenAuthenticationFilter.java:36)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:735)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:678)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1569)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1474)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at feign.Client$Default.convertResponse(Client.java:108)
+	at feign.Client$Default.execute(Client.java:104)
+	at com.alibaba.cloud.seata.feign.SeataFeignClient.execute(SeataFeignClient.java:59)
+	at org.springframework.cloud.openfeign.ribbon.FeignLoadBalancer.execute(FeignLoadBalancer.java:98)
+	at org.springframework.cloud.openfeign.ribbon.FeignLoadBalancer.execute(FeignLoadBalancer.java:56)
+	at com.netflix.client.AbstractLoadBalancerAwareClient$1.call(AbstractLoadBalancerAwareClient.java:104)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$3$1.call(LoadBalancerCommand.java:303)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$3$1.call(LoadBalancerCommand.java:287)
+	at rx.internal.util.ScalarSynchronousObservable$3.call(ScalarSynchronousObservable.java:231)
+	at rx.internal.util.ScalarSynchronousObservable$3.call(ScalarSynchronousObservable.java:228)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeConcatMap$ConcatMapSubscriber.drain(OnSubscribeConcatMap.java:286)
+	at rx.internal.operators.OnSubscribeConcatMap$ConcatMapSubscriber.onNext(OnSubscribeConcatMap.java:144)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:185)
+	at com.netflix.loadbalancer.reactive.LoadBalancerCommand$1.call(LoadBalancerCommand.java:180)
+	at rx.Observable.unsafeSubscribe(Observable.java:10327)
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:94)
+	at rx.internal.operators.OnSubscribeConcatMap.call(OnSubscribeConcatMap.java:42)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:48)
+	at rx.internal.operators.OnSubscribeLift.call(OnSubscribeLift.java:30)
+	at rx.Observable.subscribe(Observable.java:10423)
+	at rx.Observable.subscribe(Observable.java:10390)
+	at rx.observables.BlockingObservable.blockForSingle(BlockingObservable.java:443)
+	at rx.observables.BlockingObservable.single(BlockingObservable.java:340)
+	at com.netflix.client.AbstractLoadBalancerAwareClient.executeWithLoadBalancer(AbstractLoadBalancerAwareClient.java:112)
+	at org.springframework.cloud.openfeign.ribbon.LoadBalancerFeignClient.execute(LoadBalancerFeignClient.java:84)
+	at com.alibaba.cloud.seata.feign.SeataLoadBalancerFeignClient.execute(SeataLoadBalancerFeignClient.java:45)
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:119)
+	... 62 common frames omitted
+2023-08-07 23:13:54.832 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:13:54.880 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:04.835 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:04.883 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:14.823 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:14.876 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:24.824 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:24.871 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:34.837 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:34.885 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:44.829 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:44.877 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:54.838 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:14:54.870 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:04.824 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:04.871 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:14.837 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:14.875 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:27.406 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:27.407 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:34.834 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:34.882 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:44.833 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:44.870 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:54.828 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:15:54.876 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:04.826 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:04.874 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:14.827 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:14.880 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:24.834 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:24.882 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:34.829 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:34.876 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:44.828 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:44.881 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:54.832 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:16:54.880 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:17:04.833 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:17:04.881 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:17:14.841 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:17:14.873 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:17:24.824 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:17:24.871 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:17:34.832 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:17:34.880 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:18:09.197 -  ERROR --- [           main] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:18:10.724 -  ERROR --- [           main] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:18:40.828 -  ERROR --- [9.199.175.93-11] c.a.n.c.remote.client.grpc.GrpcClient    : [1691421494917_222.240.122.32_11333]Request stream onCompleted, switch server
+2023-08-07 23:19:09.188 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:09.220 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:19.182 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:19.213 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:29.181 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:29.212 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:39.183 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:39.214 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:49.190 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:49.222 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:59.183 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:19:59.215 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:09.191 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:09.223 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:19.194 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:19.226 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:29.188 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:29.220 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:39.187 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:39.219 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:49.192 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:49.224 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:59.191 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:20:59.229 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:21:09.186 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:21:09.217 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:21:19.185 -  ERROR --- [eoutChecker_1_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct
+2023-08-07 23:21:19.217 -  ERROR --- [eoutChecker_2_1] i.s.c.r.netty.NettyClientChannelManager  : can not get cluster name in registry config 'service.vgroupMapping.default_tx_group', please make sure registry config correct

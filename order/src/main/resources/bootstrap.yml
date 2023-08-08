@@ -12,5 +12,3 @@ spring:
     #  部署环境
   profiles:
     active: dev
-server:
-  port: 8080
