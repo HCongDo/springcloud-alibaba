@@ -72,4 +72,7 @@ public class FeignDemoController {
     public ResultDto err() throws Exception{
         return productFeignService.err();
     }
+
+
+
 }

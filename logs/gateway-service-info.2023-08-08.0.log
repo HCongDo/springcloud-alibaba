@@ -1,0 +1,290 @@
+2023-08-08 22:37:27.427 INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 22:37:27.431 INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 22:37:30.302 WARN  --- [           main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[gateway-service] & group[DEFAULT_GROUP]
+2023-08-08 22:37:30.333 INFO  --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-common-sentinel.yml,DEFAULT_GROUP'}]
+2023-08-08 22:37:30.336 INFO  --- [           main] com.study.gateway.GateWayApplition       : No active profile set, falling back to default profiles: default
+2023-08-08 22:37:30.905 INFO  --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=701c24e3-a002-37f1-9c43-3a480e132f69
+2023-08-08 22:37:31.066 INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 22:37:31.068 INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 22:37:31.070 INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 22:37:31.214 WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-08 22:37:31.214 INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-08 22:37:31.217 WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-08 22:37:31.217 INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-08 22:37:32.765 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Customer]
+2023-08-08 22:37:32.765 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2023-08-08 22:37:32.765 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2023-08-08 22:37:32.765 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2023-08-08 22:37:32.765 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2023-08-08 22:37:32.765 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2023-08-08 22:37:32.765 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2023-08-08 22:37:32.765 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2023-08-08 22:37:32.765 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2023-08-08 22:37:32.766 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2023-08-08 22:37:32.766 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2023-08-08 22:37:32.766 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2023-08-08 22:37:32.766 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2023-08-08 22:37:32.766 INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2023-08-08 22:37:32.785 INFO  --- [           main] c.a.c.s.g.s.SentinelSCGAutoConfiguration : [Sentinel SpringCloudGateway] register SentinelGatewayFilter with order: -2147483648
+2023-08-08 22:37:32.897 INFO  --- [           main] c.a.c.s.g.s.SentinelSCGAutoConfiguration : [Sentinel SpringCloudGateway] register SentinelGatewayBlockExceptionHandler
+2023-08-08 22:37:32.920 INFO  --- [           main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-08 22:37:33.588 INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 22:37:33.588 INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 22:37:33.998 INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 22:37:33.998 INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 22:37:34.675 INFO  --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 7080
+2023-08-08 22:37:35.551 INFO  --- [           main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP gateway-service 192.168.2.8:7080 register finished
+2023-08-08 22:37:35.567 INFO  --- [           main] com.study.gateway.GateWayApplition       : Started GateWayApplition in 9.429 seconds (JVM running for 10.499)
+2023-08-08 22:38:24.127 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:38:24.127 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/authorization/oauth/token
+2023-08-08 22:38:24.155 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/oauth/token
+2023-08-08 22:38:24.162 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:81c584e8-4748-4fa7-a5f5-ef3038fe35b5
+2023-08-08 22:38:24.619 INFO  --- [ctor-http-nio-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: oauth-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 22:38:24.640 INFO  --- [ctor-http-nio-3] c.netflix.loadbalancer.BaseLoadBalancer  : Client: oauth-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=oauth-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-08-08 22:38:24.645 INFO  --- [ctor-http-nio-3] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2023-08-08 22:38:24.682 INFO  --- [ctor-http-nio-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: oauth-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 22:38:24.684 INFO  --- [ctor-http-nio-3] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client oauth-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=oauth-service,current list of Servers=[192.168.2.8:7090],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.2.8:7090;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@2b8e6ce2
+2023-08-08 22:38:25.439 INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:38:25.448 INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"access_token":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsidXNlci1yZXNvdXJjZSJdLCJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNjkxNTEyNzA1LCJhdXRob3JpdGllcyI6WyJvcmRlciJdLCJqdGkiOiIwNjk5OWU2ZS1iNGNkLTQ1NDMtYWVmZS0xNmY0ZTA5NGUyNjAiLCJjbGllbnRfaWQiOiJvcmRlci1zZXJ2aWNlIn0.NGlopuYTDbqKaBdc1H1TpvsqIJPnnIf-yg8uwJxwagH23YZ7VXbaRKeOnMx9yIRkAvTwOSVUaXJ9XN8QBvUoLg","token_type":"bearer","expires_in":7199,"scope":"all","jti":"06999e6e-b4cd-4543-aefe-16f4e094e260"}
+2023-08-08 22:38:25.492 ERROR --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : 响应包装转换失败，异常信息为：
+java.lang.NullPointerException: null
+	at com.study.gateway.filters.GlobalPostFilter.responseConversion(GlobalPostFilter.java:101)
+	at com.study.gateway.filters.GlobalPostFilter.access$200(GlobalPostFilter.java:43)
+	at com.study.gateway.filters.GlobalPostFilter$1.lambda$writeWith$0(GlobalPostFilter.java:85)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:100)
+	at reactor.core.publisher.FluxBuffer$BufferExactSubscriber.onComplete(FluxBuffer.java:179)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:136)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:252)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:136)
+	at reactor.netty.channel.FluxReceive.terminateReceiver(FluxReceive.java:450)
+	at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:256)
+	at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:387)
+	at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:373)
+	at reactor.netty.channel.ChannelOperations.terminate(ChannelOperations.java:429)
+	at reactor.netty.http.client.HttpClientOperations.onInboundNext(HttpClientOperations.java:655)
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:96)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2023-08-08 22:38:25.651 INFO  --- [erListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: oauth-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 22:38:44.618 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:38:44.618 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 22:38:44.618 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 22:38:44.786 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 22:38:44.869 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:c26c96f6-3be1-4362-b567-7d025b7f04ca
+2023-08-08 22:38:44.892 INFO  --- [ctor-http-nio-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 22:38:44.894 INFO  --- [ctor-http-nio-3] c.netflix.loadbalancer.BaseLoadBalancer  : Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-08-08 22:38:44.895 INFO  --- [ctor-http-nio-3] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2023-08-08 22:38:44.916 INFO  --- [ctor-http-nio-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 22:38:44.917 INFO  --- [ctor-http-nio-3] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[192.168.2.8:8010],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.2.8:8010;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@717e7941
+2023-08-08 22:38:45.281 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:38:45.283 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 22:38:45.908 INFO  --- [erListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 22:38:51.408 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:38:51.408 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 22:38:51.409 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 22:38:51.409 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 22:38:51.409 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:83fcbe19-1903-433a-90be-eb9e8d9e0ed5
+2023-08-08 22:38:51.445 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:38:51.445 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 22:45:13.997 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:45:13.997 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 22:45:13.998 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 22:45:13.998 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 22:45:13.999 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:3800f015-38bb-4502-b841-58f590ab0bd1
+2023-08-08 22:45:14.353 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:45:14.355 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 22:46:17.614 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:46:17.614 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 22:46:17.614 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 22:46:17.615 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 22:46:17.615 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:991a0cb4-d749-472a-8743-358a8400cba9
+2023-08-08 22:46:17.978 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:46:17.980 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 22:48:06.997 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:48:06.997 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 22:48:06.997 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 22:48:06.998 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 22:48:06.998 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:cd99f9dd-bf10-43f0-b991-7751195b5b9d
+2023-08-08 22:48:07.348 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:48:07.351 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 22:50:34.227 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:50:34.227 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 22:50:34.227 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 22:50:34.228 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 22:50:34.228 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:9580aa9e-9c9c-4e88-97ba-edf4afd901d2
+2023-08-08 22:50:34.582 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:50:34.584 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 22:53:19.430 WARN  --- [       Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2023-08-08 22:53:19.430 INFO  --- [      Thread-75] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+2023-08-08 22:53:19.430 WARN  --- [      Thread-14] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2023-08-08 22:53:19.430 WARN  --- [      Thread-14] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2023-08-08 22:53:19.432 WARN  --- [       Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2023-08-08 22:53:19.435 INFO  --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-08 22:53:19.453 INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2023-08-08 22:53:19.471 INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2023-08-08 22:53:39.860 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 22:53:39.860 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 22:53:42.215 -  WARN  --- [           main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[gateway-service] & group[DEFAULT_GROUP]
+2023-08-08 22:53:42.251 -  INFO  --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-common-sentinel.yml,DEFAULT_GROUP'}]
+2023-08-08 22:53:42.255 -  INFO  --- [           main] com.study.gateway.GateWayApplition       : No active profile set, falling back to default profiles: default
+2023-08-08 22:53:42.935 -  INFO  --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=701c24e3-a002-37f1-9c43-3a480e132f69
+2023-08-08 22:53:43.133 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 22:53:43.135 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 22:53:43.138 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 22:53:43.353 -  WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-08 22:53:43.353 -  INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-08 22:53:43.357 -  WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-08 22:53:43.357 -  INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Customer]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2023-08-08 22:53:45.120 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2023-08-08 22:53:45.121 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2023-08-08 22:53:45.121 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2023-08-08 22:53:45.121 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2023-08-08 22:53:45.148 -  INFO  --- [           main] c.a.c.s.g.s.SentinelSCGAutoConfiguration : [Sentinel SpringCloudGateway] register SentinelGatewayFilter with order: -2147483648
+2023-08-08 22:53:45.280 -  INFO  --- [           main] c.a.c.s.g.s.SentinelSCGAutoConfiguration : [Sentinel SpringCloudGateway] register SentinelGatewayBlockExceptionHandler
+2023-08-08 22:53:45.305 -  INFO  --- [           main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-08 22:53:45.963 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 22:53:45.963 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 22:53:46.342 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 22:53:46.342 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 22:53:46.986 -  INFO  --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 7080
+2023-08-08 22:53:47.824 -  INFO  --- [           main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP gateway-service 192.168.2.8:7080 register finished
+2023-08-08 22:53:47.839 -  INFO  --- [           main] com.study.gateway.GateWayApplition       : Started GateWayApplition in 9.158 seconds (JVM running for 10.18)
+2023-08-08 22:54:15.873 -  INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:54:15.873 -  INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 22:54:15.918 -  INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 22:54:16.117 -  INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 22:54:16.191 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f
+2023-08-08 22:54:16.715 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 22:54:16.737 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] c.netflix.loadbalancer.BaseLoadBalancer  : Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-08-08 22:54:16.742 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2023-08-08 22:54:16.782 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 22:54:16.783 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[192.168.2.8:8010],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.2.8:8010;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@6d935e47
+2023-08-08 22:54:17.187 -  INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:54:17.196 -  INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 22:54:17.748 -  INFO  --- [erListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 22:54:34.487 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:54:34.487 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 22:54:34.487 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 22:54:34.488 - c0ba0b86-ccb9-4aaa-b259-e08aeaa7431f INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 22:54:34.488 - f44e31a7-2d1b-4317-b789-5b6a500782b6 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:f44e31a7-2d1b-4317-b789-5b6a500782b6
+2023-08-08 22:54:34.527 -  INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:54:34.527 -  INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 22:56:00.502 - f44e31a7-2d1b-4317-b789-5b6a500782b6 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 22:56:00.503 - f44e31a7-2d1b-4317-b789-5b6a500782b6 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 22:56:00.503 - f44e31a7-2d1b-4317-b789-5b6a500782b6 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 22:56:00.504 - f44e31a7-2d1b-4317-b789-5b6a500782b6 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 22:56:00.504 - 3e19fbf0-efd0-4466-81a1-9b3f0eafe080 INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:3e19fbf0-efd0-4466-81a1-9b3f0eafe080
+2023-08-08 22:56:00.862 - 3e19fbf0-efd0-4466-81a1-9b3f0eafe080 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 22:56:00.863 - 3e19fbf0-efd0-4466-81a1-9b3f0eafe080 INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 22:56:47.855 -  WARN  --- [       Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2023-08-08 22:56:47.855 -  WARN  --- [      Thread-11] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2023-08-08 22:56:47.855 -  INFO  --- [      Thread-63] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+2023-08-08 22:56:47.855 -  WARN  --- [      Thread-11] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2023-08-08 22:56:47.856 -  WARN  --- [       Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2023-08-08 22:56:47.859 -  INFO  --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-08 22:56:47.883 -  INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2023-08-08 22:56:47.906 -  INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+2023-08-08 23:25:10.351 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 23:25:10.352 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 23:25:12.948 -  WARN  --- [           main] c.a.c.n.c.NacosPropertySourceBuilder     : Ignore the empty nacos configuration and get it based on dataId[gateway-service] & group[DEFAULT_GROUP]
+2023-08-08 23:25:12.973 -  INFO  --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-common-sentinel.yml,DEFAULT_GROUP'}]
+2023-08-08 23:25:12.976 -  INFO  --- [           main] com.study.gateway.GateWayApplition       : No active profile set, falling back to default profiles: default
+2023-08-08 23:25:13.460 -  INFO  --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=701c24e3-a002-37f1-9c43-3a480e132f69
+2023-08-08 23:25:13.599 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 23:25:13.600 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 23:25:13.601 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-08 23:25:13.739 -  WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-08 23:25:13.739 -  INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-08 23:25:13.744 -  WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-08 23:25:13.744 -  INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Customer]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2023-08-08 23:25:15.340 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2023-08-08 23:25:15.341 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2023-08-08 23:25:15.341 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2023-08-08 23:25:15.341 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2023-08-08 23:25:15.361 -  INFO  --- [           main] c.a.c.s.g.s.SentinelSCGAutoConfiguration : [Sentinel SpringCloudGateway] register SentinelGatewayFilter with order: -2147483648
+2023-08-08 23:25:15.473 -  INFO  --- [           main] c.a.c.s.g.s.SentinelSCGAutoConfiguration : [Sentinel SpringCloudGateway] register SentinelGatewayBlockExceptionHandler
+2023-08-08 23:25:15.495 -  INFO  --- [           main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-08 23:25:16.129 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 23:25:16.129 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 23:25:16.507 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-08 23:25:16.507 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-08 23:25:17.130 -  INFO  --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 7080
+2023-08-08 23:25:18.181 -  INFO  --- [           main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP gateway-service 192.168.2.8:7080 register finished
+2023-08-08 23:25:18.196 -  INFO  --- [           main] com.study.gateway.GateWayApplition       : Started GateWayApplition in 9.101 seconds (JVM running for 9.978)
+2023-08-08 23:29:50.731 -  INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 23:29:50.731 -  INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/feign/all
+2023-08-08 23:29:50.758 -  INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/feign/all
+2023-08-08 23:29:50.955 -  INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 23:29:51.033 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:c93ea2e9-82e9-4467-bc0c-d5affd869f8b
+2023-08-08 23:29:51.559 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 23:29:51.581 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] c.netflix.loadbalancer.BaseLoadBalancer  : Client: order-service instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2023-08-08 23:29:51.586 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] c.n.l.DynamicServerListLoadBalancer      : Using serverListUpdater PollingServerListUpdater
+2023-08-08 23:29:51.627 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] c.netflix.config.ChainedDynamicProperty  : Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 23:29:51.628 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] c.n.l.DynamicServerListLoadBalancer      : DynamicServerListLoadBalancer for client order-service initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=order-service,current list of Servers=[192.168.2.8:8010],Load balancer stats=Zone stats: {unknown=[Zone:unknown;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.2.8:8010;	Zone:UNKNOWN;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 08:00:00 CST 1970;	First connection made: Thu Jan 01 08:00:00 CST 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:com.alibaba.cloud.nacos.ribbon.NacosServerList@5691b725
+2023-08-08 23:29:52.602 -  INFO  --- [erListUpdater-0] c.netflix.config.ChainedDynamicProperty  : Flipping property: order-service.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2023-08-08 23:29:52.960 -  INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 23:29:52.969 -  INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":{"applicationName":null,"status":200,"msg":"请求成功","data":{"records":[{"id":1,"name":"Jone","age":18,"phone":"15700739495","createTime":"15-07-2023 04:00:00"},{"id":2,"name":"Jack","age":20,"phone":"15700739495","createTime":"15-07-2023 04:00:00"},{"id":3,"name":"Tom","age":28,"phone":"15700739495","createTime":"15-07-2023 04:00:00"},{"id":4,"name":"Sandy","age":99,"phone":"15700739495","createTime":"15-07-2023 04:00:00"}],"total":5,"size":4,"current":1,"orders":[],"optimizeCountSql":true,"searchCount":true,"countId":null,"maxLimit":null,"pages":2},"hostIp":"192.168.2.8","instanceName":null,"logId":null},"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 23:30:16.579 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，processing response results
+2023-08-08 23:30:16.580 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] c.study.gateway.filters.GlobalPostFilter : 请求路径为：/order/gateway/list
+2023-08-08 23:30:16.580 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : 请求路径为：/gateway/list
+2023-08-08 23:30:16.581 - c93ea2e9-82e9-4467-bc0c-d5affd869f8b INFO  --- [ctor-http-nio-3] com.study.gateway.filters.JwtTokenFilter : token解密为：{aud=[user-resource], scope=[all], exp=1691512705, authorities=[order], jti=06999e6e-b4cd-4543-aefe-16f4e094e260, client_id=order-service}
+2023-08-08 23:30:16.581 - 0276ad11-4331-43e0-b8d5-2e84b04b622e INFO  --- [ctor-http-nio-3] com.study.gateway.filters.Log4jMDCFilter : traceId:0276ad11-4331-43e0-b8d5-2e84b04b622e
+2023-08-08 23:30:16.679 -  INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : global filter HttpResponseBody，Response processing，getStatusCode=200 OK
+2023-08-08 23:30:16.680 -  INFO  --- [ctor-http-nio-4] c.study.gateway.filters.GlobalPostFilter : 响应结果为：{"applicationName":null,"status":200,"msg":"请求成功","data":[{"id":1,"name":"贺聪","age":18},{"id":2,"name":"张三","age":15}],"hostIp":"192.168.2.8","instanceName":"order1","logId":null}
+2023-08-08 23:30:31.882 -  INFO  --- [      Thread-77] c.n.l.PollingServerListUpdater           : Shutting down the Executor Pool for PollingServerListUpdater
+2023-08-08 23:30:31.882 -  WARN  --- [       Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2023-08-08 23:30:31.882 -  WARN  --- [      Thread-11] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2023-08-08 23:30:31.883 -  WARN  --- [      Thread-11] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2023-08-08 23:30:31.884 -  WARN  --- [       Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2023-08-08 23:30:31.887 -  INFO  --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-08 23:30:31.910 -  INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2023-08-08 23:30:31.932 -  INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
