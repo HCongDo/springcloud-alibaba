@@ -1,0 +1,105 @@
+2023-08-26 16:13:31.215 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-26 16:13:31.216 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-26 16:13:37.076 -  ERROR --- [           main] c.a.c.n.c.NacosPropertySourceBuilder     : get data from Nacos error,dataId:common-sentinel.yml 
+com.alibaba.nacos.api.exception.NacosException: http error, code=403,msg=unknown user!,dataId=common-sentinel.yml,group=DEFAULT_GROUP,tenant=
+	at com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient.queryConfig(ClientWorker.java:979)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.getServerConfig(ClientWorker.java:396)
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:166)
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:94)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:202)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:189)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosConfiguration(NacosPropertySourceLocator.java:163)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadSharedConfiguration(NacosPropertySourceLocator.java:116)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:101)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:98)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:623)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:367)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.gateway.GateWayApplition.main(GateWayApplition.java:15)
+2023-08-26 16:13:37.109 -  ERROR --- [           main] c.a.c.n.c.NacosPropertySourceBuilder     : get data from Nacos error,dataId:gateway-service 
+com.alibaba.nacos.api.exception.NacosException: http error, code=403,msg=unknown user!,dataId=gateway-service,group=DEFAULT_GROUP,tenant=
+	at com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient.queryConfig(ClientWorker.java:979)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.getServerConfig(ClientWorker.java:396)
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:166)
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:94)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:202)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:189)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:141)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:98)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:623)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:367)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.gateway.GateWayApplition.main(GateWayApplition.java:15)
+2023-08-26 16:13:37.148 -  ERROR --- [           main] c.a.c.n.c.NacosPropertySourceBuilder     : get data from Nacos error,dataId:gateway-service.yml 
+com.alibaba.nacos.api.exception.NacosException: http error, code=403,msg=unknown user!,dataId=gateway-service.yml,group=DEFAULT_GROUP,tenant=
+	at com.alibaba.nacos.client.config.impl.ClientWorker$ConfigRpcTransportClient.queryConfig(ClientWorker.java:979)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.getServerConfig(ClientWorker.java:396)
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfigInner(NacosConfigService.java:166)
+	at com.alibaba.nacos.client.config.NacosConfigService.getConfig(NacosConfigService.java:94)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:85)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:73)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:202)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:189)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadApplicationConfiguration(NacosPropertySourceLocator.java:144)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:103)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:98)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:623)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:367)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
+	at com.study.gateway.GateWayApplition.main(GateWayApplition.java:15)
+2023-08-26 16:13:37.149 -  INFO  --- [           main] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-gateway-service.yml,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-gateway-service,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-common-sentinel.yml,DEFAULT_GROUP'}]
+2023-08-26 16:13:37.153 -  INFO  --- [           main] com.study.gateway.GateWayApplition       : No active profile set, falling back to default profiles: default
+2023-08-26 16:13:37.668 -  INFO  --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=701c24e3-a002-37f1-9c43-3a480e132f69
+2023-08-26 16:13:37.814 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-26 16:13:37.815 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactiveLoadBalancerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-26 16:13:37.817 -  INFO  --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-08-26 16:13:37.961 -  WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-26 16:13:37.961 -  INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-26 16:13:37.964 -  WARN  --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2023-08-26 16:13:37.964 -  INFO  --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2023-08-26 16:13:39.753 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Customer]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+2023-08-26 16:13:39.754 -  INFO  --- [           main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2023-08-26 16:13:39.773 -  INFO  --- [           main] c.a.c.s.g.s.SentinelSCGAutoConfiguration : [Sentinel SpringCloudGateway] register SentinelGatewayFilter with order: -2147483648
+2023-08-26 16:13:39.876 -  INFO  --- [           main] c.a.c.s.g.s.SentinelSCGAutoConfiguration : [Sentinel SpringCloudGateway] register SentinelGatewayBlockExceptionHandler
+2023-08-26 16:13:39.899 -  INFO  --- [           main] o.s.s.concurrent.ThreadPoolTaskScheduler : Initializing ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-26 16:13:40.461 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+2023-08-26 16:13:40.461 -  INFO  --- [           main] c.a.n.p.a.s.c.ClientAuthPluginManager    : [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+2023-08-26 16:13:44.428 -  INFO  --- [           main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 7080
+2023-08-26 16:13:45.237 -  INFO  --- [           main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP gateway-service 192.168.2.8:7080 register finished
+2023-08-26 16:13:45.246 -  INFO  --- [           main] com.study.gateway.GateWayApplition       : Started GateWayApplition in 15.336 seconds (JVM running for 16.474)
+2023-08-26 20:06:14.641 -  WARN  --- [      Thread-16] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+2023-08-26 20:06:14.641 -  WARN  --- [       Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+2023-08-26 20:06:14.642 -  WARN  --- [      Thread-16] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+2023-08-26 20:06:14.642 -  WARN  --- [       Thread-4] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+2023-08-26 20:06:14.648 -  INFO  --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'Nacos-Watch-Task-Scheduler'
+2023-08-26 20:06:14.680 -  INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+2023-08-26 20:06:14.703 -  INFO  --- [extShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.

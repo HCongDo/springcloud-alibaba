@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.order.mapper.CustomerMapper">
+
+    <!--根据id查询Emp实体-->
+    <select id="selectCustomerList" resultType="com.study.order.entity.Customer">
+        select * from customer
+    </select>
+
+
+    <!--根据id查询Emp实体-->
+    <update id="updateCustomerAge">
+        update customer set age = 99 where 1=1
+        <if test="id!=null">
+            id = #{id}
+        </if>
+        <if test="age!=null">
+            age = #{age}
+        </if>
+    </update>
+
+
+
+</mapper>

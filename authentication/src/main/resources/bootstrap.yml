@@ -20,4 +20,3 @@ spring:
           refresh: true
       username: nacos
       password: nacos
-
