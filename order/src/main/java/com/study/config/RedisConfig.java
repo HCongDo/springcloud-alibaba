@@ -51,8 +51,8 @@ public class RedisConfig {
     public RedissonClient redissonClient() {
         Config config = new Config();
         ClusterServersConfig clusterConfig = config.useClusterServers()
-                .addNodeAddress("redis://139.199.175.93:6379", "redis://139.199.175.93:6380", "redis://139.199.175.93:6381")
-                .setPassword("hc123456")
+                .addNodeAddress("redis://139.199.175.93:7771", "redis://139.199.175.93:7772", "redis://139.199.175.93:7773")
+                .setPassword("redis@#PassWord")
                 .setScanInterval(2000);
         return Redisson.create(config);
     }

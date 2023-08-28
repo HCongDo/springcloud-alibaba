@@ -11,11 +11,13 @@ spring:
       # 服务注册
       discovery:
         server-addr: 139.199.175.93:8848
+#         server-addr: 127.0.0.1:8848
       config:
         # 是否开启配置中心 默认true
         enabled: true
         # 配置中心地址
         server-addr: 139.199.175.93:8848
+#        server-addr: 127.0.0.1:8848
         # 配置文件后缀
         file-extension: yml
         # 配置对应的分组
@@ -32,10 +34,10 @@ spring:
           data-id: common-logback-nacos.yml
           group: DEFAULT_GROUP
           refresh: true
-#        shared-configs[2]:
-#          data-id: common-rocketmq.yml
-#          group: DEFAULT_GROUP
-#          refresh: true
+        shared-configs[2]:
+          data-id: common-rocketmq.yml
+          group: DEFAULT_GROUP
+          refresh: true
 #        shared-configs[3]:
 #            data-id: common-sentinel.yml
 #            group: DEFAULT_GROUP
@@ -53,12 +55,13 @@ spring:
       username: nacos
       # Nacos 认证密码
       password: nacos
+
   redis:
     database: 0
     timeout: 3000
-    password: hc123456
+    password: redis@#PassWord
     cluster:
-      nodes: 139.199.175.93:6379,139.199.175.93:6380,139.199.175.93:6381
+      nodes: 139.199.175.93:7771,139.199.175.93:7772,139.199.175.93:7773
     lettuce:
       pool:
         max-idle: 50
@@ -70,9 +73,9 @@ spring:
       config:
         clusterServersConfig:
             nodeAddresses:
-            - "redis://139.199.175.93:6379"
-            - "redis://139.199.175.93:6380"
-            - "redis://139.199.175.93:6381"
+            - "redis://139.199.175.93:7771"
+            - "redis://139.199.175.93:7772"
+            - "redis://139.199.175.93:7773"
             password: hc123456
             slaveConnectionMinimumIdleSize: 8
             slaveConnectionPoolSize: 16

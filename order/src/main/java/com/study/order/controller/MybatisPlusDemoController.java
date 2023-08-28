@@ -21,7 +21,7 @@ import java.util.List;
  * @version 1.0
  * @date 2023/7/8 11:25
  */
-@RefreshScope //动态刷新配置 - nacos config
+//@RefreshScope //动态刷新配置 - nacos config
 @RestController
 @RequestMapping("/mybatis")
 public class MybatisPlusDemoController {

@@ -12,14 +12,3 @@ spring:
     #  部署环境
   profiles:
     active: dev
-
-  datasource:
-    username: hc
-    password: Hc_123456
-    url: jdbc:mysql://139.199.175.93:3306/study?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=true
-    driver-class-name: com.mysql.cj.jdbc.Driver
-# mybatis-plus 相关配置
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
-  mapper-locations: mapper/*.xml

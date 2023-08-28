@@ -9,13 +9,11 @@ import com.study.order.mapper.CustomerMapper;
 import org.redisson.Redisson;
 import org.redisson.api.RBloomFilter;
 import org.redisson.api.RLock;
+import org.redisson.api.RReadWriteLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.concurrent.TimeUnit;
@@ -67,8 +65,8 @@ public class RedisDemo {
     }
 
 
-    @RequestMapping("/product/id")
-    public ResultDto getCustomerById(@PathVariable("id") String id) {
+    @RequestMapping("/id")
+    public ResultDto getCustomerById(@PathVariable("id") String id) throws Exception {
         Assert.notNull(id, "为找到合适数据");
         // TODO 布隆过滤 -海量无效Key攻击
         Assert.isTrue(bloomFilter.contains(id), "为找到对应数据");
@@ -87,8 +85,9 @@ public class RedisDemo {
                 return ResultDto.success(customerFromCache);
             }
             // TODO Redisson 分布式读写锁锁 - 解决双写不一致问题
-            RLock updateLock = redisson.getLock(StrUtil.format(LOCK_CUSTOMER_UPDATE_PREFIX, id));
-            updateLock.lock();
+            RReadWriteLock consumerReadWriteLock = redisson.getReadWriteLock(StrUtil.format(LOCK_CUSTOMER_UPDATE_PREFIX, id));
+            RLock readLock = consumerReadWriteLock.readLock();
+            readLock.lock();
             try {
                 // TODO DB查询数据
                 Customer customer = customerMapper.selectById(id);
@@ -98,7 +97,7 @@ public class RedisDemo {
                             redisUtil.getExpireTime(CUSTOMER_CACHE_TIMEOUT), TimeUnit.SECONDS);
                 }
             } finally {
-                updateLock.unlock();
+                readLock.unlock();
             }
         } finally {
             lock.unlock();
@@ -107,7 +106,7 @@ public class RedisDemo {
     }
 
     @PostMapping("/create")
-    public ResultDto createCustomer(Customer customer) {
+    public ResultDto createCustomer(@RequestBody Customer customer) throws Exception {
         int insert = customerMapper.insert(customer);
         Assert.isTrue(insert == 1, "新增失败");
         redisTemplate.opsForValue().set(StrUtil.format(LOCK_CUSTOMER_HOT_CACHE_PREFIX, customer.getId()), JSON.toJSONString(customer),
@@ -116,29 +115,32 @@ public class RedisDemo {
     }
 
     @PostMapping("/update")
-    public ResultDto updateCustomer(Customer customer) {
+    public ResultDto updateCustomer(@RequestBody Customer customer) throws Exception {
         Assert.notNull(customer.getId(), "请传参");
-        RLock lock = redisson.getLock(StrUtil.format(LOCK_CUSTOMER_UPDATE_PREFIX, customer.getId()));
-        lock.lock();
+        RReadWriteLock consumerReadWriteLock = redisson.getReadWriteLock(StrUtil.format(LOCK_CUSTOMER_UPDATE_PREFIX, customer.getId()));
+        RLock writeLock = consumerReadWriteLock.writeLock();
+        writeLock.lock();
         try {
             customerMapper.updateCustomerAge(customer.getId(), 100);
-            redisUtil.set(StrUtil.format(LOCK_CUSTOMER_HOT_CACHE_PREFIX, customer.getId()), JSON.toJSONString(customer), redisUtil.getExpireTime(CUSTOMER_CACHE_TIMEOUT), TimeUnit.SECONDS);
+            redisUtil.set(StrUtil.format(LOCK_CUSTOMER_HOT_CACHE_PREFIX, customer.getId()),
+                    JSON.toJSONString(customerMapper.selectById(customer.getId())), redisUtil.getExpireTime(CUSTOMER_CACHE_TIMEOUT), TimeUnit.SECONDS);
         } finally {
-            lock.unlock();
+            writeLock.unlock();
         }
         return ResultDto.success("更新成功");
     }
 
     @RequestMapping("/delete")
-    public ResultDto deleteCustomer(Customer customer) {
+    public ResultDto deleteCustomer(@RequestBody Customer customer) throws Exception {
         Assert.notNull(customer.getId(), "请传参");
-        RLock lock = redisson.getLock(StrUtil.format(LOCK_CUSTOMER_UPDATE_PREFIX, customer.getId()));
-        lock.lock();
+        RReadWriteLock consumerReadWriteLock = redisson.getReadWriteLock(StrUtil.format(LOCK_CUSTOMER_UPDATE_PREFIX, customer.getId()));
+        RLock writeLock = consumerReadWriteLock.writeLock();
+        writeLock.lock();
         try {
             customerMapper.deleteById(customer.getId());
             redisUtil.del(StrUtil.format(LOCK_CUSTOMER_HOT_CACHE_PREFIX, customer.getId()));
         } finally {
-            lock.unlock();
+            writeLock.unlock();
         }
         return ResultDto.success("删除成功");
     }
