@@ -61,7 +61,7 @@ public class RedisDemo {
     @PostConstruct
     public void afterInitialized() {
         // 在 Bean 初始化完成后执行的逻辑
-        bloomFilter = redisson.getBloomFilter("RBLOOM_CUSTOMER_NAME");
+        bloomFilter = redisson.getBloomFilter(RBLOOM_CUSTOMER_NAME);
     }
 
 
