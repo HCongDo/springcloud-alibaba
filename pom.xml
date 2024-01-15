@@ -11,6 +11,7 @@
 		<module>seata-datasource-proxy</module>
 		<module>gateway</module>
 		<module>authentication</module>
+		<module>statemachine</module>
 	</modules>
 	<!--parent 标签写法替换成为了dependencyManagement 标签写法-->
 	<!--springboot的版本管理器 以后公司中开发就可以使用parent去继承公司自定义的父maven项目-->
