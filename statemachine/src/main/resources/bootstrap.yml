@@ -1,0 +1,35 @@
+spring:
+  application:
+    # 服务名
+    name: statemachine
+  cloud:
+    nacos:
+      # 服务注册
+      discovery:
+        server-addr: 139.199.175.93:8848
+      config:
+        # 是否开启配置中心 默认true
+        enabled: true
+        # 配置中心地址
+        server-addr: 139.199.175.93:8848
+        # 配置文件后缀
+        file-extension: yml
+        # 配置对应的分组
+        group: DEFAULT_GROUP
+        # 命名空间 常用场景之一是不同环境的配置的区分隔离，例如开发测试环境和生产环境的资源（如配置、服务）隔离等
+        # 使用namespace=public时, 这里不能显示指定. 否则会拿不到数据
+        #namespace: ba42e722-81aa-48f1-9944-9dca57d5f396
+        # 支持多个共享 Data Id 的配置，优先级小于extension-configs,自定义 Data Id 配置 属性是个集合，内部由 Config POJO 组成。Config 有 3 个属性，分别是 dataId, group 以及 refresh
+        shared-configs[0]:
+          data-id: common-mysql.yml # 配置文件名-Data Id
+          group: DEFAULT_GROUP   # 默认为DEFAULT_GROUP
+          refresh: true   # 是否动态刷新，默认为false
+        shared-configs[1]:
+          data-id: common-logback-nacos.xml
+          group: DEFAULT_GROUP
+          refresh: true
+      # Nacos 认证用户 认证密码
+      username: nacos
+      password: nacos
+server:
+  port: 8809
